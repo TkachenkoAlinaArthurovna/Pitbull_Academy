@@ -1,0 +1,175 @@
+@mixin text-12-500 {
+  font-family: "Noto Sans";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 140%;
+  letter-spacing: -0.48px;
+}
+
+@mixin text-12-600 {
+  font-family: "Noto Sans";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%;
+  letter-spacing: -0.36px;
+  text-transform: uppercase;
+}
+
+@mixin text-14-500 {
+  font-family: "Noto Sans";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 140%;
+  letter-spacing: -0.56px;
+}
+
+@mixin text-14-700 {
+  font-family: "Noto Sans";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%;
+  letter-spacing: -0.56px;
+}
+
+@mixin text-16-500 {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 140%;
+  letter-spacing: -0.64px;
+}
+
+@mixin text-16-600 {
+  font-family: "Noto Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%;
+  letter-spacing: -0.48px;
+  text-transform: uppercase;
+}
+
+@mixin text-18-500 {
+  font-family: "Noto Sans";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%;
+  letter-spacing: -0.54px;
+}
+
+@mixin text-18-700 {
+  font-family: "Noto Sans";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 130%;
+  letter-spacing: -0.54px;
+}
+
+@mixin text-20-700 {
+  font-family: "Noto Sans";
+  font-size: max(12px, 1.04vw);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%;
+  letter-spacing: -0.04em;
+}
+
+@mixin text-20-500 {
+  font-family: "Noto Sans";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 140%;
+  letter-spacing: -0.8px;
+}
+
+@mixin text-24-500 {
+  font-family: "Noto Sans";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%;
+  letter-spacing: -0.72px;
+}
+
+@mixin text-24-700 {
+  font-family: "Noto Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: clamp(16px, 1.25vw, 24px);
+  line-height: 130%;
+  letter-spacing: clamp(-0.48px, -0.04vw, -0.72px);
+}
+
+@mixin text-36-500 {
+  font-family: "Noto Sans";
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%;
+  letter-spacing: -2.16px;
+}
+
+@mixin text-40-500 {
+  font-family: "Noto Sans";
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 110%;
+  letter-spacing: -2.4px;
+}
+
+@mixin text-42-600 {
+  font-family: "Noto Sans";
+  font-size: 41.769px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 100%;
+  letter-spacing: -1.253px;
+  text-transform: uppercase;
+}
+
+@mixin text-48-500 {
+  font-family: "Noto Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-size: clamp(40px, 3vw, 48px);
+  line-height: 110%;
+  letter-spacing: clamp(-2.4px, -0.18vw, -2.88px);
+}
+
+@mixin text-92-600 {
+  font-family: "Noto Sans";
+  font-size: 92px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 100%;
+  letter-spacing: -2.76px;
+  text-transform: uppercase;
+}
+
+@mixin text-92-72-48-600 {
+  font-family: "Noto Sans";
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 100%;
+  font-size: clamp(72px, 4.8vw, 92px);
+  letter-spacing: clamp(-2.16px, -0.14vw, -2.76px);
+  text-align: center;
+  @media (max-width: 768px) {
+    font-size: clamp(48px, 9.375vw, 72px);
+    letter-spacing: clamp(-2.16px, -0.25vw, -1.44px);
+  }
+}
+
+@mixin center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

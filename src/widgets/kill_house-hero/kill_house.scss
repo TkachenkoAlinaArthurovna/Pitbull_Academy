@@ -1,0 +1,84 @@
+.kill_house {
+  position: relative;
+  z-index: 2;
+  margin-bottom: max(80px, 10.41vw);
+  @media (max-width: 480px) {
+    margin-bottom: 40px;
+  }
+  .bg {
+    position: relative;
+    z-index: 1;
+    @media (max-width: 1024px) {
+      border-radius: max(40px, 4.16vw);
+      overflow: hidden;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .bg_mob {
+      display: none;
+    }
+    @media (max-width: 1024px) {
+      .bg_desktop {
+        display: none;
+      }
+      .bg_mob {
+        display: block;
+      }
+    }
+  }
+  &__wrapper {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100vw - 8.333vw);
+    height: 100%;
+    @media (max-width: 1024px) {
+      padding-top: 100px;
+    }
+    @media (max-width: 768px) {
+      width: calc(100vw - 40px);
+    }
+    @media (max-width: 480px) {
+      width: calc(100vw - 24px);
+      padding-top: 80px;
+    }
+  }
+  &__title {
+    position: absolute;
+    z-index: 2;
+    top: 100px;
+    left: 0;
+    color: $white;
+    @media (max-width: 1024px) {
+      position: relative;
+      top: 0;
+      text-align: start;
+      color: $black;
+    }
+  }
+  &__card {
+    position: absolute;
+    z-index: 2;
+    top: 100px;
+    right: 0;
+    width: 560px;
+    @media (max-width: 1024px) {
+      position: relative;
+      top: 0;
+      width: 100%;
+    }
+  }
+  &__text {
+    @include text-20-500;
+    margin-bottom: 48px;
+    @media (max-width: 480px) {
+      margin-bottom: 20px;
+      @include text-14-500;
+    }
+  }
+}

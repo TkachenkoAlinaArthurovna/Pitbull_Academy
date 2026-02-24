@@ -1,0 +1,58 @@
+section.pa
+  .pa__container
+    //- LEFT: brand card
+    .pa__brand
+      img(src="/assets/images/pa/pa_bg.jpg" alt="bg")
+      .pa__brand-inner
+        .pa__brand-top 
+          svg
+            use(href="/assets/icons.svg#Pitbull")
+        .pa__brand-logo
+          svg
+            use(href="/assets/icons.svg#Logo")
+        .pa__brand-bottom
+          svg
+            use(href="/assets/icons.svg#Academy")
+
+    //- MIDDLE: stats
+    .pa__stats
+      .stat.stat-first
+        img.bg_1(src="/assets/images/pa/card.png" alt="bg")
+        img.bg_2(src="/assets/images/pa/card_mob.png" alt="bg")
+        .stat__content
+          span.stat__tag ПОНАД
+          .stat__wrapper
+            .stat__value 6000
+            p.stat__text Курсантів покращило навички в інтерактивному тирі
+
+      .stat.stat-second
+        img.bg_1(src="/assets/images/pa/card.png" alt="bg")
+        img.bg_2(src="/assets/images/pa/card_mob.png" alt="bg")
+        .stat__content
+          span.stat__tag.stat__tag--right БІЛЬШЕ
+          .stat__wrapper
+            .stat__value 300
+            p.stat__text Курсантів відучились в школі пілотів
+
+      .stat.stat-third
+        img.bg_1(src="/assets/images/pa/card.png" alt="bg")
+        img.bg_2(src="/assets/images/pa/card_mob.png" alt="bg")
+        .stat__content
+          span.stat__tag МАЙЖЕ
+          .stat__wrapper
+            .stat__value 1000
+            p.stat__text Осіб відвідали стрільбище
+
+    //- RIGHT: about
+    .pa__about
+      h2.pa__about-title ПРО НАС
+
+      .pa__about-media
+        img.pa__about-img(src="/assets/images/pa/view.jpg" alt="Pitbull Academy")
+
+      p.pa__about-text Pitbull Academy — це простір, де досвідчені військові можуть продовжити свою професійну діяльність, а цивільні — можуть спробувати новий для себе вид відпочинку чи опанувати корисні навички. 
+      .pa__button.button_pa
+        span Дізнатися більше
+        svg
+          use(href="/assets/icons.svg#Arrow_right")
+

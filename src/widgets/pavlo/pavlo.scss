@@ -1,0 +1,154 @@
+.pavlo {
+  position: relative;
+  z-index: 1;
+  width: calc(100vw - 8.333vw);
+  margin: 0 auto;
+  margin-bottom: max(80px, 10.41vw);
+  @media (max-width: 768px) {
+    width: calc(100vw - 40px);
+  }
+  @media (max-width: 480px) {
+    width: calc(100vw - 24px);
+    margin-bottom: 40px;
+  }
+  &__wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    gap: 6.25vw;
+    width: 100%;
+    padding: max(136px, 10.41vw) max(40px, 3.125vw) max(60px, 12.5vw) max(40px, 3.125vw);
+    overflow: hidden;
+    @media (max-width: 1024px) {
+      flex-direction: column;
+    }
+    @media (max-width: 480px) {
+      padding: 90px 20px 60px 20px;
+    }
+  }
+  &__logo {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 40px;
+    border-radius: 50%;
+    background: $white;
+    @media (max-width: 1360px) {
+      padding: 28px;
+    }
+    @media (max-width: 768px) {
+      padding: 20px;
+    }
+    svg {
+      width: 148.497px;
+      height: 168.598px;
+      @media (max-width: 1360px) {
+        width: 124.615px;
+        height: 124.615px;
+      }
+      @media (max-width: 768px) {
+        width: 93.462px;
+        height: 93.462px;
+      }
+    }
+  }
+  &__bg {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: auto;
+    img {
+      width: auto;
+      height: 100%;
+    }
+  }
+  &__left {
+    position: relative;
+    z-index: 2;
+
+    h2 {
+      @include text-48-500;
+      margin-bottom: max(40px, 3.125vw);
+      @media (max-width: 480px) {
+        @include text-24-500;
+        margin-bottom: 20px;
+      }
+    }
+    img {
+      min-width: 36.45vw;
+      width: 36.45vw;
+      border-radius: 40px;
+      @media (max-width: 1024px) {
+        margin: 0 auto;
+      }
+      @media (max-width: 768px) {
+        min-width: 100%;
+        width: 100%;
+      }
+    }
+  }
+  &__right {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    gap: max(20px, 3.125vw);
+    @include text-20-500;
+    @media (max-width: 1360px) {
+      flex-direction: column;
+    }
+    @media (max-width: 480px) {
+      @include text-14-500;
+    }
+    h3 {
+      padding-bottom: 12px;
+      font-weight: 700;
+    }
+    p span {
+      font-weight: 700;
+    }
+    li {
+      display: flex;
+      gap: 10px;
+      padding-bottom: 12px;
+    }
+    li span {
+      position: relative;
+      display: block;
+      padding-left: 18px;
+      font-weight: 700;
+    }
+    li span::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: $black;
+    }
+  }
+  &__right_left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    @media (max-width: 480px) {
+      gap: 12px;
+    }
+  }
+  &__left_left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    @media (max-width: 480px) {
+      gap: 12px;
+    }
+  }
+}

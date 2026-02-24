@@ -1,0 +1,34 @@
+extends /index.pug
+block content
+  img(class="background " src="/assets/images/bg.png")
+  - const pageTitle = "МАГАЗИН ЗБРОЇ"
+  - const pageTitleClass = "title_for_page--shop"
+  include /widgets/title/title.pug
+  .tabs 
+    .tabs__left 
+      .tabs__item.active Усі Позиції
+      .tabs__item Пістолети
+      .tabs__item Карабіни
+      .tabs__item Ножі
+    .tabs__right(id="open-pop-up-info")
+      svg
+        use(href="/assets/icons.svg#Info")
+      span Хто має право на придбання, користування та зберігання спортивної зброї?
+  .products
+    - for (let i = 0; i < 10; i++)
+      .product_card(id="open-pop-up-product")
+        .product_card__img
+          img(src="/public_static/img/shop/product.jpg" alt="product")
+        .product_card__title Пістолет Вeretta m9a1
+        .product_card__bottom 
+          .product_card__price 
+            span.name Ціна продажу
+            span.price 96 800 грн
+          .product_card__info 
+            svg
+              use(href="/assets/icons.svg#Info")
+            span Характеристики
+        .product_card__wrapper_button
+          .product_card__button.btn_black_without_icon Замовити
+
+

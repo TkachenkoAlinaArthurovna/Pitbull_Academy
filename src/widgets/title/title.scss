@@ -1,0 +1,60 @@
+.title_for_page {
+  position: relative;
+  z-index: 1;
+  width: calc(100vw - 8.333vw);
+  margin: 0 auto;
+  padding-top: calc(100px + 3.125vw);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  @media (max-width: 768px) {
+    width: calc(100vw - 40px);
+    padding-top: 110px;
+  }
+  @media (max-width: 480px) {
+    width: calc(100vw - 24px);
+    padding-top: 80px;
+  }
+  h1 {
+    @include text-92-72-48-600;
+    text-align: start;
+  }
+  &__right {
+    display: flex;
+    gap: 20px;
+  }
+  &__sound {
+    display: none;
+    cursor: pointer;
+  }
+  svg {
+    width: 148px;
+    height: 150px;
+    @media (max-width: 768px) {
+      width: 98px;
+      height: 100px;
+    }
+    @media (max-width: 480px) {
+      width: 80px;
+      height: 82px;
+    }
+  }
+}
+
+.title_for_page--shop {
+  .title_for_page__sound {
+    display: block;
+  }
+  .logo-dog {
+    @media (max-width: 480px) {
+      display: none;
+    }
+  }
+}
+
+.title_for_page--event {
+  .logo-dog {
+    display: none;
+  }
+}

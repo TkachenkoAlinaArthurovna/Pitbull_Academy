@@ -1,0 +1,22 @@
+extends /index.pug
+block content
+  img(class="background " src="/assets/images/bg.png")
+  - const pageTitle = "ЗМАГАННЯ ТА ПОДІЇ"
+  include /widgets/title/title.pug
+  .tabs 
+    .tabs__left 
+      .tabs__item.active Усі івенти
+      .tabs__item Події
+      .tabs__item Активності
+    .tabs__right
+  .events_page_wrapper
+    - for (let i = 0; i < 10; i++)
+      a.event_card.swiper-slide(href="/event")
+          .event_card__img
+            img(src="/public_static/img/event_card.jpg" alt="event")
+          h3 Змагання у Мотижині
+          .event_card__date 
+            svg
+                use(href="/assets/icons.svg#Calendar")
+            span 05 тра, 2025
+  

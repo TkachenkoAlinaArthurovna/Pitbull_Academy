@@ -1,0 +1,21 @@
+extends /index.pug
+block content
+  img(class="background " src="/assets/images/bg.png")
+  .error 
+    .error__wrapper
+      .error__left 
+        svg
+            use(href="/assets/icons.svg#Error")
+      .error__right
+        h1 404
+        h2 Місія не активована
+        p Ця сторінка ще не введена в дію або була знята з завдання
+        .buttons 
+          button.button_pa(data-btn="binotel-open")
+            svg.header__cta-icon
+              use(href="/assets/icons.svg#Calendar")
+            span Записатися
+          a.button_pa(href="./")
+            span НА ГОЛОВНУ
+            svg
+              use(href="/assets/icons.svg#Arrow_right")

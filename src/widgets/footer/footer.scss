@@ -1,0 +1,339 @@
+.footer {
+  position: relative;
+  z-index: 2;
+  width: calc(100vw - 8.333vw);
+  margin: 0 auto;
+  @media (max-width: 768px) {
+    width: calc(100vw - 40px);
+  }
+  @media (max-width: 480px) {
+    width: calc(100vw - 24px);
+  }
+  &__title.title {
+    text-align: start;
+  }
+  &__wrapper {
+    display: flex;
+    gap: max(20px, 2.08vw);
+    @media (max-width: 1350px) {
+      flex-direction: column-reverse;
+    }
+  }
+  &__left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: max(28px, 2.08vw);
+    @media (max-width: 480px) {
+      gap: 20px;
+    }
+  }
+  &__item {
+    @include text-20-500;
+    @media (max-width: 480px) {
+      @include text-14-500;
+    }
+    h3 {
+      font-family: "Noto Sans";
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 130%;
+      letter-spacing: -0.72px;
+      margin-bottom: 6px;
+      @media (max-width: 480px) {
+        @include text-18-700;
+      }
+    }
+    div {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: start;
+      gap: 20px;
+    }
+    .footer__item_time {
+      gap: 8px;
+    }
+    a {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      @media (max-width: 480px) {
+        gap: 8px;
+      }
+    }
+    svg {
+      color: $black;
+    }
+    .footer__social {
+      display: flex;
+      gap: 20px;
+      @media (max-width: 480px) {
+        flex-direction: column;
+        align-content: start;
+        gap: 12px;
+      }
+      a {
+        gap: 8px;
+      }
+    }
+    .footer__icon {
+      justify-content: center;
+      text-decoration: none;
+      width: 32px;
+      height: 32px;
+      @media (max-width: 480px) {
+        width: 24px;
+        height: 24px;
+        svg {
+          width: 13.5px;
+          height: 13.5px;
+        }
+      }
+    }
+    .footer__icon-phone {
+      width: 20px;
+      height: 20px;
+    }
+    .footer__icon-location {
+      width: auto;
+      height: 24px;
+    }
+    .footer__clock-icon {
+      position: relative;
+      top: 4px;
+      width: 24px;
+      height: 24px;
+      @media (max-width: 480px) {
+        top: 2px;
+        width: 18px;
+        height: 18px;
+      }
+    }
+    .button_pa {
+      margin-top: 20px;
+      @media (max-width: 768px) {
+        margin-top: 14px;
+      }
+    }
+    .button_pa[data-btn="binotel-open"] {
+      padding: 14px 32px 14px 24px;
+    }
+  }
+  .phones div {
+    @media (max-width: 480px) {
+      flex-direction: column;
+      gap: 8px;
+    }
+  }
+  &__right {
+    position: relative;
+    width: 58.333vw;
+    height: min-content;
+    @media (max-width: 1700px) {
+      height: auto;
+    }
+    @media (max-width: 1350px) {
+      width: 100%;
+      height: min-content;
+    }
+    img {
+      width: 100%;
+      height: auto;
+      @media (max-width: 1700px) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: auto;
+        height: 100%;
+        object-fit: cover;
+        object-position: 0 0;
+      }
+      @media (max-width: 1350px) {
+        position: relative;
+        width: 100%;
+        height: auto;
+      }
+    }
+    svg#routeSvg {
+      position: absolute;
+      left: 7vw;
+      bottom: 9.2vw;
+      width: 42.5vw;
+      height: auto;
+      overflow: visible;
+      @media (max-width: 1700px) {
+        left: 7.5vw;
+        bottom: auto;
+        top: 40%;
+        height: 35%;
+        width: auto;
+      }
+      @media (max-width: 1350px) {
+        left: 11vw;
+        bottom: 14.5vw;
+        top: auto;
+        height: auto;
+        width: 66.2vw;
+      }
+      @media (max-width: 768px) {
+        left: 11.4vw;
+        bottom: 15vw;
+        width: 67vw;
+      }
+      @media (max-width: 480px) {
+        left: 11vw;
+        bottom: 15vw;
+        width: 68vw;
+      }
+    }
+  }
+  &__right_text {
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 60px;
+    padding: 0 28px;
+    border-radius: 40px;
+    background: rgba(1, 11, 19, 0.2);
+    backdrop-filter: blur(20px);
+    @include text-20-500;
+    @media (max-width: 768px) {
+      height: 32px;
+      padding: 0 12px;
+      @include text-14-500;
+    }
+    .number {
+      @include text-48-500;
+      @media (max-width: 1360px) {
+        @include text-40-500;
+      }
+      @media (max-width: 768px) {
+        @include text-24-500;
+      }
+    }
+  }
+  &__right_left_text {
+    top: max(20px, 2.08vw);
+    left: max(20px, 2.08vw);
+    @media (max-width: 480px) {
+      top: 4px;
+      left: 4px;
+    }
+    svg {
+      position: relative;
+      left: 0;
+      bottom: 0;
+      width: 46px;
+      height: 32px;
+      @media (max-width: 768px) {
+        width: 26px;
+        height: 18px;
+      }
+    }
+  }
+  &__right_right_text {
+    top: max(20px, 2.08vw);
+    right: max(20px, 2.08vw);
+    @media (max-width: 480px) {
+      top: auto;
+      right: 4px;
+      bottom: 4px;
+    }
+  }
+  &__bottom {
+    position: relative;
+    height: 100px;
+    margin-top: max(40px, 3.125vw);
+    @media (max-width: 480px) {
+      margin-top: 20px;
+    }
+    @include text-20-500;
+    @media (max-width: 1024px) {
+      height: 80px;
+    }
+    @media (max-width: 480px) {
+      @include text-14-500;
+    }
+  }
+  &__bottom_center {
+    position: absolute;
+    top: 0;
+    left: 35.5vw;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    .arrow_up {
+      @include center;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: $beige;
+      overflow: hidden;
+      @media (max-width: 480px) {
+        width: 40px;
+        height: 40px;
+        svg {
+          width: 16px;
+          height: 16px;
+        }
+      }
+      svg {
+        animation: ArrowUpAnim 2s ease-in-out infinite;
+      }
+    }
+  }
+  &__bottom_left {
+    display: flex;
+    gap: 12px;
+    padding: 16px 0;
+    @media (max-width: 1024px) {
+      flex-direction: column;
+      gap: 0;
+      padding: 0;
+    }
+  }
+  &__bottom_right {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    svg {
+      width: 40px;
+      height: auto;
+    }
+  }
+}
+
+.footer a:hover {
+  @media (min-width: 1024px) {
+    .anim_content .anim_content_1 {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    .anim_content .anim_content_2 {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}
+@keyframes ArrowUpAnim {
+  0% {
+    transform: translateY(50px);
+  }
+
+  45% {
+    transform: translateY(0px);
+  }
+
+  55% {
+    transform: translateY(0px);
+  }
+
+  100% {
+    transform: translateY(-50px);
+  }
+}

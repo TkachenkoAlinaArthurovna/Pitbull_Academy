@@ -1,0 +1,88 @@
+.menu_section {
+  position: relative;
+  z-index: 1;
+  width: calc(100vw - 8.333vw);
+  margin: 0 auto;
+  margin-bottom: max(80px, 10.41vw);
+  overflow: hidden;
+  @media (max-width: 768px) {
+    width: calc(100vw - 40px);
+  }
+  @media (max-width: 480px) {
+    width: calc(100vw - 24px);
+    margin-bottom: 40px;
+  }
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
+  .menu__left {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+  }
+  .menu__title {
+    position: relative;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    @include text-92-72-48-600;
+    @media (max-width: 480px) {
+      max-width: 100%;
+    }
+  }
+  .menu__cards {
+    justify-content: space-around;
+    overflow: hidden;
+    @media (max-width: 1024px) {
+      width: 65.1vw;
+    }
+    @media (max-width: 768px) {
+      padding: 10px;
+    }
+    @media (max-width: 480px) {
+      width: 100%;
+      height: auto;
+    }
+  }
+  .menu-card {
+    max-height: 100%;
+    @media (max-width: 1024px) {
+      &:not(:first-child) {
+        margin-top: -26px !important;
+      }
+    }
+  }
+  .menu-card__text {
+    text-transform: lowercase;
+  }
+  .menu-card__text::first-letter {
+    text-transform: uppercase;
+  }
+  .menu-card__content {
+    @include text-36-500;
+    @media (max-width: 480px) {
+      @include text-18-500;
+    }
+  }
+  @media (max-width: 768px) {
+    .menu-card:nth-child(1),
+    .menu-card:nth-child(3),
+    .menu-card:nth-child(5) {
+      --rotate: 2deg;
+    }
+
+    .menu-card:nth-child(2),
+    .menu-card:nth-child(4),
+    .menu-card:nth-child(6) {
+      --rotate: -2deg;
+    }
+  }
+}

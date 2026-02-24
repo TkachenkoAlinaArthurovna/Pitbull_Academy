@@ -1,0 +1,15 @@
+- const logos = ['Abrams','Balistic_logo','Gerts_logo','IBIS_logo','Karpatska_logo','ATA_logo','UPSF_logo','IPSC_logo','Utactic_logo']
+
+section.partners
+  .partners__track
+    .partners__wrapper
+      each logo in logos
+        .partner
+          svg
+            use(href=`/assets/icons.svg#${logo}`)
+
+    .partners__wrapper
+      each logo in logos
+        .partner
+          svg
+            use(href=`/assets/icons.svg#${logo}`)

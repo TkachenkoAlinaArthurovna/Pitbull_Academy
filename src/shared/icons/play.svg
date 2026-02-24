@@ -1,0 +1,29 @@
+<svg width="140" height="140" viewBox="0 0 140 140" fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+
+  <defs>
+    <!-- шлях кола для тексту -->
+    <path id="textCircle" d="M70,70 m-54,0 a54,54 0 1,1 108,0 a54,54 0 1,1 -108,0" />
+  </defs>
+
+  <circle cx="70" cy="70" r="70" fill="#010B13" fill-opacity="0.2"/>
+
+  <!-- КРУТИТЬСЯ ЛИШЕ НАПИС -->
+  <g style="transform-origin: 70px 70px; animation: spin 8s linear infinite;">
+    <text fill="#F7F7F7" font-size="9" font-family="Noto Sans" letter-spacing="2">
+      <textPath href="#textCircle" xlink:href="#textCircle" startOffset="50%" text-anchor="middle">
+        ДИВИТИСЬ ВІДЕО • ДИВИТИСЬ ВІДЕО • ДИВИТИСЬ ВІДЕО •
+      </textPath>
+    </text>
+  </g>
+
+  <!-- play -->
+  <path d="M83.2512 66.532L65.355 55.3469C63.0238 53.8899 60 55.5658 60 58.3149V80.6851C60 83.4342 63.0238 85.1101 65.355 83.6531L83.2512 72.468C85.4445 71.0972 85.4445 67.9028 83.2512 66.532Z" fill="#F7F7F7"/>
+
+  <style>
+    @keyframes spin { to { transform: rotate(360deg); } }
+  </style>
+</svg>
+
+

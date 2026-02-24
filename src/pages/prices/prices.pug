@@ -1,0 +1,2200 @@
+extends /index.pug
+block content
+  img(class="background " src="/assets/images/bg.png")
+  - const pageTitle = "ВАРТІСТЬ ПОСЛУГ"
+  include /widgets/title/title.pug
+  .prices_page 
+    .prices_page__wrapper 
+      .prices_page__left 
+        h2 Наші послуги
+        .dropdown_items#prices-select
+          .dropdown_items__toggle
+            span.dropdown_items__selected Групові заняття
+            span.dropdown_items__arrow
+              svg
+                use(href="/assets/icons.svg#Arrow_prices_page")
+          ul.dropdown_items__menu
+            li.active(id="group-classes")
+              span.arrow 
+                svg
+                  use(href="/assets/icons.svg#Arrow_prices_page")
+              span.name Групові заняття
+            li(id="individual-classes")
+              span.arrow 
+                svg
+                  use(href="/assets/icons.svg#Arrow_prices_page")
+              span.name Індивідуальні заняття
+            li(id="corporate-packages")
+              span.arrow 
+                svg
+                  use(href="/assets/icons.svg#Arrow_prices_page")
+              span.name Корпоративні пакети
+            li(id="tccc")
+              span.arrow 
+                svg
+                  use(href="/assets/icons.svg#Arrow_prices_page")
+              span.name Тактична медицина
+            li(id="certificates")
+              span.arrow 
+                svg
+                  use(href="/assets/icons.svg#Arrow_prices_page")
+              span.name Подарункові сертифікати
+            li(id="instructor_services")
+              span.arrow 
+                svg
+                  use(href="/assets/icons.svg#Arrow_prices_page")
+              span Послуги інструктора
+            li(id="target_sales")
+              span.arrow 
+                svg
+                  use(href="/assets/icons.svg#Arrow_prices_page")
+              span.name Продаж мішеней
+            li(id="shooting_lane_rental")
+              span.arrow 
+                svg
+                  use(href="/assets/icons.svg#Arrow_prices_page")
+              span.name Оренда капонірів
+            li(id="pistol_rental")
+              span.arrow 
+                svg
+                  use(href="/assets/icons.svg#Arrow_prices_page")
+              span.name Оренда пістолета
+            li(id="carbine_rental")
+              span.arrow 
+                svg
+                  use(href="/assets/icons.svg#Arrow_prices_page")
+              span.name Оренда карабінів
+      .prices_page__right
+        .prices_page__content(data-id="group-classes")
+          .prices_page__content_top 
+            .prices_page__content_title Групові заняття
+            .prices_page__content_adult.prices_page__content_btn.active(data-id="adult") Для дорослих
+            .prices_page__content_child.prices_page__content_btn(data-id="child") Для дітей
+            .prices_page__content_info.prices_page__content_btn(data-id="info") Що входить до занять?
+          .prices_page__content_bottom 
+            .prices_page__content_adult(data-id="adult")
+              .packages
+                .packages__title Пакет “базовий карабін для дорослих”
+                .packages__wrapper 
+                  .package 
+                    .package__left 
+                      h3 Карабін базовий 2 особи
+                      .package__left_info 
+                        .package__left_price 
+                          svg
+                            use(href="/assets/icons.svg#Price")
+                          span 8 900  грн
+                        .package__left_time
+                          svg
+                            use(href="/assets/icons.svg#Clock2")
+                          span 2 години
+                    .package__center.dropdown
+                      h3.dropdown__toggle 
+                        span У вартість входить:
+                        svg
+                          use(href="/assets/icons.svg#Arrow_for_dropdown")
+                      ul.dropdown__menu
+                        li Робота інструктора
+                        li Оренда доріжок
+                        li Оренда мішеней
+                        li Оренда AR-15
+                        li 50 набоїв
+                        li Калібр 223
+                    .package__right 
+                      button.button_pa(data-btn="binotel-open")
+                        svg
+                          use(href="/assets/icons.svg#Calendar")
+                        span Записатися
+                  .package 
+                    .package__left 
+                      h3 Карабін базовий 3 особи
+                      .package__left_info 
+                        .package__left_price 
+                          svg
+                            use(href="/assets/icons.svg#Price")
+                          span 13 900  грн
+                        .package__left_time
+                          svg
+                            use(href="/assets/icons.svg#Clock2")
+                          span 3 години
+                    .package__center.dropdown 
+                      h3.dropdown__toggle 
+                        span У вартість входить:
+                        svg
+                          use(href="/assets/icons.svg#Arrow_for_dropdown")
+                      ul.dropdown__menu 
+                        li Робота інструктора
+                        li Оренда доріжок
+                        li Оренда мішеней
+                        li Оренда AR-15
+                        li 50 набоїв
+                        li Калібр 223
+                    .package__right 
+                      button.button_pa(data-btn="binotel-open")
+                        svg
+                          use(href="/assets/icons.svg#Calendar")
+                        span Записатися  
+                  .package 
+                    .package__left 
+                      h3 Карабін базовий 4 особи
+                      .package__left_info 
+                        .package__left_price 
+                          svg
+                            use(href="/assets/icons.svg#Price")
+                          span 17 900  грн
+                        .package__left_time
+                          svg
+                            use(href="/assets/icons.svg#Clock2")
+                          span 3 години
+                    .package__center.dropdown 
+                      h3.dropdown__toggle 
+                        span У вартість входить:
+                        svg
+                          use(href="/assets/icons.svg#Arrow_for_dropdown")
+                      ul.dropdown__menu
+                        li Робота інструктора
+                        li Оренда доріжок
+                        li Оренда мішеней
+                        li Оренда AR-15
+                        li 50 набоїв
+                        li Калібр 223
+                    .package__right 
+                      button.button_pa(data-btn="binotel-open")
+                        svg
+                          use(href="/assets/icons.svg#Calendar")
+                        span Записатися      
+                  .package 
+                    .package__left 
+                      h3 Карабін базовий 5 осіб
+                      .package__left_info 
+                        .package__left_price 
+                          svg
+                            use(href="/assets/icons.svg#Price")
+                          span 20 900  грн
+                        .package__left_time
+                          svg
+                            use(href="/assets/icons.svg#Clock2")
+                          span 3 години
+                    .package__center.dropdown 
+                      h3.dropdown__toggle 
+                        span У вартість входить:
+                        svg
+                          use(href="/assets/icons.svg#Arrow_for_dropdown")
+                      ul.dropdown__menu
+                        li Робота інструктора
+                        li Оренда доріжок
+                        li Оренда мішеней
+                        li Оренда AR-15
+                        li 50 набоїв
+                        li Калібр 223
+                    .package__right 
+                      button.button_pa(data-btn="binotel-open")
+                        svg
+                          use(href="/assets/icons.svg#Calendar")
+                        span Записатися 
+                  .package 
+                    .package__left 
+                      h3 Карабін базовий 6 осіб
+                      .package__left_info 
+                        .package__left_price 
+                          svg
+                            use(href="/assets/icons.svg#Price")
+                          span 24 900  грн
+                        .package__left_time
+                          svg
+                            use(href="/assets/icons.svg#Clock2")
+                          span 3 години
+                    .package__center.dropdown 
+                      h3.dropdown__toggle 
+                        span У вартість входить:
+                        svg
+                          use(href="/assets/icons.svg#Arrow_for_dropdown")
+                      ul.dropdown__menu
+                        li Робота інструктора
+                        li Оренда доріжок
+                        li Оренда мішеней
+                        li Оренда AR-15
+                        li 50 набоїв
+                        li Калібр 223
+                    .package__right 
+                      button.button_pa(data-btn="binotel-open")
+                        svg
+                          use(href="/assets/icons.svg#Calendar")
+                        span Записатися   
+                  .package 
+                    .package__left 
+                      h3 PCC базовий (9х21)
+                      .package__left_info 
+                        .package__left_price 
+                          svg
+                            use(href="/assets/icons.svg#Price")
+                          span 4 000  грн
+                        .package__left_time
+                          svg
+                            use(href="/assets/icons.svg#Clock2")
+                          span 2 години
+                    .package__center.dropdown 
+                      h3.dropdown__toggle 
+                        span У вартість входить:
+                        svg
+                          use(href="/assets/icons.svg#Arrow_for_dropdown")
+                      ul.dropdown__menu
+                        li Робота інструктора
+                        li Оренда доріжок
+                        li Оренда мішеней
+                        li Оренда PSS Stribog
+                        li 50 набоїв
+                    .package__right 
+                      button.button_pa(data-btn="binotel-open")
+                        svg
+                          use(href="/assets/icons.svg#Calendar")
+                        span Записатися                    
+              .packages 
+                .packages__title Пакет “базовий пістолет для дорослих”
+                .packages__wrapper
+                  .package 
+                    .package__left 
+                      h3 Пістолет базовий 2 особи
+                      .package__left_info 
+                        .package__left_price 
+                          svg
+                            use(href="/assets/icons.svg#Price")
+                          span 5 900  грн
+                        .package__left_time
+                          svg
+                            use(href="/assets/icons.svg#Clock2")
+                          span 2 години
+                    .package__center.dropdown 
+                      h3.dropdown__toggle 
+                        span У вартість входить:
+                        svg
+                          use(href="/assets/icons.svg#Arrow_for_dropdown")
+                      ul.dropdown__menu
+                        li Робота інструктора
+                        li Оренда доріжок
+                        li Оренда мішеней
+                        li Оренда Glock 17
+                        li 50 набоїв
+                        li Калібр 9х19
+                    .package__right 
+                      button.button_pa(data-btn="binotel-open")
+                        svg
+                          use(href="/assets/icons.svg#Calendar")
+                        span Записатися
+                  .package 
+                    .package__left 
+                      h3 Пістолет базовий 3 особи
+                      .package__left_info 
+                        .package__left_price 
+                          svg
+                            use(href="/assets/icons.svg#Price")
+                          span 9 900  грн
+                        .package__left_time
+                          svg
+                            use(href="/assets/icons.svg#Clock2")
+                          span 3 години
+                    .package__center.dropdown 
+                      h3.dropdown__toggle 
+                        span У вартість входить:
+                        svg
+                          use(href="/assets/icons.svg#Arrow_for_dropdown")
+                      ul.dropdown__menu
+                        li Робота інструктора
+                        li Оренда доріжок
+                        li Оренда мішеней
+                        li Оренда Glock 17
+                        li 50 набоїв
+                        li Калібр 9х19
+                    .package__right 
+                      button.button_pa(data-btn="binotel-open")
+                        svg
+                          use(href="/assets/icons.svg#Calendar")
+                        span Записатися
+                  .package 
+                    .package__left 
+                      h3 Пістолет базовий 4 особи
+                      .package__left_info 
+                        .package__left_price 
+                          svg
+                            use(href="/assets/icons.svg#Price")
+                          span 11 900  грн
+                        .package__left_time
+                          svg
+                            use(href="/assets/icons.svg#Clock2")
+                          span 3 години
+                    .package__center.dropdown 
+                      h3.dropdown__toggle 
+                        span У вартість входить:
+                        svg
+                          use(href="/assets/icons.svg#Arrow_for_dropdown")
+                      ul.dropdown__menu
+                        li Робота інструктора
+                        li Оренда доріжок
+                        li Оренда мішеней
+                        li Оренда Glock 17
+                        li 50 набоїв
+                        li Калібр 9х19
+                    .package__right 
+                      button.button_pa(data-btn="binotel-open")
+                        svg
+                          use(href="/assets/icons.svg#Calendar")
+                        span Записатися
+                  .package 
+                    .package__left 
+                      h3 Пістолет базовий 5 осіб
+                      .package__left_info 
+                        .package__left_price 
+                          svg
+                            use(href="/assets/icons.svg#Price")
+                          span 13 900  грн
+                        .package__left_time
+                          svg
+                            use(href="/assets/icons.svg#Clock2")
+                          span 3 години
+                    .package__center.dropdown 
+                      h3.dropdown__toggle 
+                        span У вартість входить:
+                        svg
+                          use(href="/assets/icons.svg#Arrow_for_dropdown")
+                      ul.dropdown__menu
+                        li Робота інструктора
+                        li Оренда доріжок
+                        li Оренда мішеней
+                        li Оренда Glock 17
+                        li 50 набоїв
+                        li Калібр 9х19
+                    .package__right 
+                      button.button_pa(data-btn="binotel-open")
+                        svg
+                          use(href="/assets/icons.svg#Calendar")
+                        span Записатися
+                  .package 
+                    .package__left 
+                      h3 Пістолет базовий 6 осіб
+                      .package__left_info 
+                        .package__left_price 
+                          svg
+                            use(href="/assets/icons.svg#Price")
+                          span 16 800  грн
+                        .package__left_time
+                          svg
+                            use(href="/assets/icons.svg#Clock2")
+                          span 3 години
+                    .package__center.dropdown 
+                      h3.dropdown__toggle 
+                        span У вартість входить:
+                        svg
+                          use(href="/assets/icons.svg#Arrow_for_dropdown")
+                      ul.dropdown__menu
+                        li Робота інструктора
+                        li Оренда доріжок
+                        li Оренда мішеней
+                        li Оренда Glock 17
+                        li 50 набоїв
+                        li Калібр 9х19
+                    .package__right 
+                      button.button_pa(data-btn="binotel-open")
+                        svg
+                          use(href="/assets/icons.svg#Calendar")
+                        span Записатися
+            .prices_page__content_child(data-id="child")
+              .packages
+                .packages__title Пакет “базовий карабін для дітей (22LR)”
+                .packages__wrapper 
+                  .package 
+                    .package__left 
+                      h3 Карабін (22 LR) на 2 особи
+                      .package__left_info 
+                        .package__left_price 
+                          svg
+                            use(href="/assets/icons.svg#Price")
+                          span 5 630  грн
+                        .package__left_time
+                          svg
+                            use(href="/assets/icons.svg#Clock2")
+                          span 2 години
+                    .package__center.dropdown 
+                      h3.dropdown__toggle 
+                        span У вартість входить:
+                        svg
+                          use(href="/assets/icons.svg#Arrow_for_dropdown")
+                      ul.dropdown__menu
+                        li БК 100 шт
+                        li Оренда карабіна
+                        li Інструктор
+                        li Оренда доріжки 
+                        li Мішень
+                    .package__right 
+                      button.button_pa(data-btn="binotel-open")
+                        svg
+                          use(href="/assets/icons.svg#Calendar")
+                        span Записатися
+                  .package 
+                    .package__left 
+                      h3 Карабін (22 LR) на 3 особи 
+                      .package__left_info 
+                        .package__left_price 
+                          svg
+                            use(href="/assets/icons.svg#Price")
+                          span 10 395  грн
+                        .package__left_time
+                          svg
+                            use(href="/assets/icons.svg#Clock2")
+                          span 3 години
+                    .package__center.dropdown 
+                      h3.dropdown__toggle 
+                        span У вартість входить:
+                        svg
+                          use(href="/assets/icons.svg#Arrow_for_dropdown")
+                      ul.dropdown__menu
+                        li БК 150 шт
+                        li Оренда карабіна
+                        li Інструктор
+                        li Оренда доріжки 
+                        li Мішень
+                    .package__right 
+                      button.button_pa(data-btn="binotel-open")
+                        svg
+                          use(href="/assets/icons.svg#Calendar")
+                        span Записатися  
+                  .package 
+                    .package__left 
+                      h3 Карабін (22 LR) на 4 особи
+                      .package__left_info 
+                        .package__left_price 
+                          svg
+                            use(href="/assets/icons.svg#Price")
+                          span 12 210  грн
+                        .package__left_time
+                          svg
+                            use(href="/assets/icons.svg#Clock2")
+                          span 3 години
+                    .package__center.dropdown 
+                      h3.dropdown__toggle 
+                        span У вартість входить:
+                        svg
+                          use(href="/assets/icons.svg#Arrow_for_dropdown")
+                      ul.dropdown__menu
+                        li БК 200 шт
+                        li Оренда карабіна
+                        li Інструктор
+                        li Оренда доріжки 
+                        li Мішень
+                    .package__right 
+                      button.button_pa(data-btn="binotel-open")
+                        svg
+                          use(href="/assets/icons.svg#Calendar")
+                        span Записатися      
+                  .package 
+                    .package__left 
+                      h3 Карабін (22 LR) на 5 осіб
+                      .package__left_info 
+                        .package__left_price 
+                          svg
+                            use(href="/assets/icons.svg#Price")
+                          span 14 025  грн
+                        .package__left_time
+                          svg
+                            use(href="/assets/icons.svg#Clock2")
+                          span 1 години
+                    .package__center.dropdown 
+                      h3.dropdown__toggle 
+                        span У вартість входить:
+                        svg
+                          use(href="/assets/icons.svg#Arrow_for_dropdown")
+                      ul.dropdown__menu
+                        li БК 250 шт
+                        li Оренда карабіна
+                        li Інструктор
+                        li Оренда доріжки 
+                        li Мішень
+                    .package__right 
+                      button.button_pa(data-btn="binotel-open")
+                        svg
+                          use(href="/assets/icons.svg#Calendar")
+                        span Записатися                    
+              .packages 
+                .packages__title Пакет “базовий пістолет для дітей (22LR)”
+                .packages__wrapper
+                  .package 
+                    .package__left 
+                      h3 Пістолет (22 LR) на 2 особи 
+                      .package__left_info 
+                        .package__left_price 
+                          svg
+                            use(href="/assets/icons.svg#Price")
+                          span 5 430  грн
+                        .package__left_time
+                          svg
+                            use(href="/assets/icons.svg#Clock2")
+                          span 3 години
+                    .package__center.dropdown 
+                      h3.dropdown__toggle 
+                        span У вартість входить:
+                        svg
+                          use(href="/assets/icons.svg#Arrow_for_dropdown")
+                      ul.dropdown__menu
+                        li БК 100 шт 
+                        li Оренда Glock
+                        li Оренда доріжки
+                        li Мішень
+                    .package__right 
+                      button.button_pa(data-btn="binotel-open")
+                        svg
+                          use(href="/assets/icons.svg#Calendar")
+                        span Записатися
+                  .package 
+                    .package__left 
+                      h3 Пістолет (22 LR) на 3 особи 
+                      .package__left_info 
+                        .package__left_price 
+                          svg
+                            use(href="/assets/icons.svg#Price")
+                          span 9 945  грн
+                        .package__left_time
+                          svg
+                            use(href="/assets/icons.svg#Clock2")
+                          span 3 години
+                    .package__center.dropdown 
+                      h3.dropdown__toggle 
+                        span У вартість входить:
+                        svg
+                          use(href="/assets/icons.svg#Arrow_for_dropdown")
+                      ul.dropdown__menu
+                        li БК 150 шт 
+                        li Оренда Glock
+                        li Оренда доріжки
+                        li Мішень
+                    .package__right 
+                      button.button_pa(data-btn="binotel-open")
+                        svg
+                          use(href="/assets/icons.svg#Calendar")
+                        span Записатися
+                  .package 
+                    .package__left 
+                      h3 Пістолет (22 LR) на 4 особи 
+                      .package__left_info 
+                        .package__left_price 
+                          svg
+                            use(href="/assets/icons.svg#Price")
+                          span 11 660  грн
+                        .package__left_time
+                          svg
+                            use(href="/assets/icons.svg#Clock2")
+                          span 3 години
+                    .package__center.dropdown 
+                      h3.dropdown__toggle 
+                        span У вартість входить:
+                        svg
+                          use(href="/assets/icons.svg#Arrow_for_dropdown")
+                      ul.dropdown__menu
+                        li БК 200 шт 
+                        li Оренда Glock
+                        li Оренда доріжки
+                        li Мішень
+                    .package__right 
+                      button.button_pa(data-btn="binotel-open")
+                        svg
+                          use(href="/assets/icons.svg#Calendar")
+                        span Записатися
+                  .package 
+                    .package__left 
+                      h3 Пістолет (22 LR) на 5 осіб
+                      .package__left_info 
+                        .package__left_price 
+                          svg
+                            use(href="/assets/icons.svg#Price")
+                          span 13 375  грн
+                        .package__left_time
+                          svg
+                            use(href="/assets/icons.svg#Clock2")
+                          span 3 години
+                    .package__center.dropdown 
+                      h3.dropdown__toggle 
+                        span У вартість входить:
+                        svg
+                          use(href="/assets/icons.svg#Arrow_for_dropdown")
+                      ul.dropdown__menu
+                        li БК 250 шт 
+                        li Оренда Glock
+                        li Оренда доріжки
+                        li Мішень
+                    .package__right 
+                      button.button_pa(data-btn="binotel-open")
+                        svg
+                          use(href="/assets/icons.svg#Calendar")
+                        span Записатися
+            .prices_page__content_info(data-id="info")
+              .packages
+                .packages__title Індивідуальні або групові заняття  (2-6 осіб), пістолет.
+                .packages__wrapper 
+                  .package 
+                    .package__left 
+                      h3 Базовий рівень:
+                      .package__left_info 
+                        .package__left_time
+                          svg
+                            use(href="/assets/icons.svg#Clock2")
+                          div
+                            span Індивідуальне заняття — 3 години 
+                            span Групове заняття — 4 години
+                    .package__center.dropdown 
+                      h3.dropdown__toggle 
+                        span Що ви дізнаєтесь?
+                        svg
+                          use(href="/assets/icons.svg#Arrow_for_dropdown")
+                      ul.dropdown__menu 
+                        li Основи безпечного поводження зі зброєю
+                        li Підбір та налаштування спорядження
+                        li Основні частини пістолета; неповне розбирання та збирання пістолета
+                        li Робота з прицільними пристроями
+                        li Стійка, формування хвату, винос пістолета на лінію прицілювання
+                        li Обробка спускового гачка
+                        li Споряджання магазину
+                        li Заряджання, розряджання пістолета
+                        li Відпрацювання влучної стрільби
+                        li Вилучення пістолета з кобури
+                        li Переноси зброї між мішенями по фронту
+                        li Виконання учбових вправ
+                        li Підсумок заняття
+                        li Основи холостих тренувань для самостійної роботи
+                        li Робота з таймером
+                    .package__right 
+                      button.button_pa(data-btn="binotel-open")
+                        svg
+                          use(href="/assets/icons.svg#Calendar")
+                        span Записатися
+                  .package 
+                    .package__left 
+                      h3 Поглиблений рівень:
+                      .package__left_info 
+                        .package__left_time
+                          svg
+                            use(href="/assets/icons.svg#Clock2")
+                          div
+                            span Індивідуальне заняття — 3 години 
+                            span Групове заняття — 4 години
+                    .package__center.dropdown 
+                      h3.dropdown__toggle 
+                        span Що ви дізнаєтесь?
+                        svg
+                          use(href="/assets/icons.svg#Arrow_for_dropdown")
+                      ul.dropdown__menu 
+                        li Основи безпечного поводження зі зброєю
+                        li Стійка, формування хвату, винос пістолета на лінію прицілювання
+                        li Обробка спускового гачка
+                        li Відпрацювання влучної стрільби
+                        li Переноси зброї між мішенями по фронту та в глибину
+                        li Тактична, екстрена заміна магазину
+                        li Затримки під час стрільби та їх усунення
+                        li Зміна положень для стрільби
+                        li Стрільба з-за укриття
+                        li Переміщення між позиціями для стрільби
+                        li Стрільба сильною та слабкою рукою
+                        li Стрільба в русі
+                        li Тестування різних моделей зброї
+                        li Підсумок заняття
+                        li Рекомендації для подальших занять
+                    .package__right 
+                      button.button_pa(data-btn="binotel-open")
+                        svg
+                          use(href="/assets/icons.svg#Calendar")
+                        span Записатися                     
+              .packages 
+                .packages__title Індивідуальні або групові заняття  (2-6 осіб), карабін.
+                .packages__wrapper
+                  .package 
+                    .package__left 
+                      h3 Базовий рівень:
+                      .package__left_info 
+                        .package__left_time
+                          svg
+                            use(href="/assets/icons.svg#Clock2")
+                          div
+                            span Індивідуальне заняття — 3 години
+                            span Групове заняття — 4 години
+                    .package__center.dropdown 
+                      h3.dropdown__toggle 
+                        span Що ви дізнаєтесь?
+                        svg
+                          use(href="/assets/icons.svg#Arrow_for_dropdown")
+                      ul.dropdown__menu 
+                        li Основи безпечного поводження зі зброєю
+                        li Підбір та налаштування спорядження
+                        li Основні частини пістолета; неповне розбирання та збирання пістолета
+                        li Робота з прицільними пристроями
+                        li Положення готовності до стрільби
+                        li Стійка, утримання та вкладка, винос карабіна на лінію прицілювання
+                        li Обробка спускового гачка
+                        li Споряджання магазина
+                        li Заряджання, розряджання карабіна
+                        li Відпрацювання влучної стрільби
+                        li Тактична, екстрена заміна магазину
+                        li Переноси зброї між мішенями по фронту
+                        li Виконання учбових вправ
+                        li Підсумок заняття
+                        li Основи холостих тренувань для самостійної роботи
+                        li Робота з таймером
+                    .package__right 
+                      button.button_pa(data-btn="binotel-open")
+                        svg
+                          use(href="/assets/icons.svg#Calendar")
+                        span Записатися
+                  .package 
+                    .package__left 
+                      h3 Поглиблений рівень:
+                      .package__left_info 
+                        .package__left_time
+                          svg
+                            use(href="/assets/icons.svg#Clock2")
+                          div
+                            span Індивідуальні заняття — 2 заняття по 3 год
+                            span Групові заняття — 2 заняття по 4 години
+                    .package__center.dropdown 
+                      h3.dropdown__toggle 
+                        span Що ви дізнаєтесь?
+                        svg
+                          use(href="/assets/icons.svg#Arrow_for_dropdown")
+                      ul.dropdown__menu 
+                        li Основи безпечного поводження зі зброєю
+                        li Стійка, утримання та вкладка, винос карабіна на лінію прицілювання
+                        li Обробка спускового гачка
+                        li Відпрацювання влучної стрільби
+                        li Переноси зброї між мішенями по фронту та в глибину
+                        li Затримки під час стрільби та їх усунення
+                        li Зміна положень для стрільби
+                        li Стрільба з-за укриття
+                        li Стрільба з сильного та слабкого плеча
+                        li Переміщення між позиціями для стрільби
+                        li Стрільба в русі;
+                        li Підсумок заняття
+                        li Рекомендації для подальших занять.
+                    .package__right 
+                      button.button_pa(data-btn="binotel-open")
+                        svg
+                          use(href="/assets/icons.svg#Calendar")
+                        span Записатися
+                  
+        .prices_page__content(data-id="individual-classes")
+          .prices_page__content_top 
+            .prices_page__content_title Індивідуальні заняття
+            .prices_page__content_adult.prices_page__content_btn.active(data-id="adult") Для дорослих
+            .prices_page__content_child.prices_page__content_btn(data-id="child") Для дітей
+            .prices_page__content_info.prices_page__content_btn(data-id="info") Що входить до занять?
+          .prices_page__content_bottom
+            .prices_page__content_adult(data-id="adult")
+              .packages
+                .packages__title Пакет “базовий карабін для дорослих”
+                .packages__wrapper
+                  .package 
+                    .package__left 
+                      h3 Карабін базовий 1 особа
+                      .package__left_info 
+                        .package__left_price 
+                          svg
+                            use(href="/assets/icons.svg#Price")
+                          span 4 900  грн
+                        .package__left_time
+                          svg
+                            use(href="/assets/icons.svg#Clock2")
+                          span 2 години
+                    .package__center.dropdown 
+                      h3.dropdown__toggle 
+                        span У вартість входить:
+                        svg
+                          use(href="/assets/icons.svg#Arrow_for_dropdown")
+                      ul.dropdown__menu
+                        li Робота інструктора
+                        li Оренда доріжок
+                        li Оренда мішеней
+                        li Оренда AR-15
+                        li 50 набоїв
+                        li Калібр 223
+                    .package__right 
+                      button.button_pa(data-btn="binotel-open")
+                        svg
+                          use(href="/assets/icons.svg#Calendar")
+                        span Записатися
+              .packages
+                .packages__title Пакет “базовий пістолет для дорослих”
+                .packages__wrapper
+                  .package 
+                    .package__left 
+                      h3 Карабін базовий 1 особа
+                      .package__left_info 
+                        .package__left_price 
+                          svg
+                            use(href="/assets/icons.svg#Price")
+                          span 3 900  грн
+                        .package__left_time
+                          svg
+                            use(href="/assets/icons.svg#Clock2")
+                          span 2 години
+                    .package__center.dropdown 
+                      h3.dropdown__toggle 
+                        span У вартість входить:
+                        svg
+                          use(href="/assets/icons.svg#Arrow_for_dropdown")
+                      ul.dropdown__menu
+                        li Робота інструктора
+                        li Оренда доріжок
+                        li Оренда мішеней
+                        li Оренда AR-15
+                        li 50 набоїв
+                        li Калібр 9х19
+                    .package__right 
+                      button.button_pa(data-btn="binotel-open")
+                        svg
+                          use(href="/assets/icons.svg#Calendar")
+                        span Записатися
+            .prices_page__content_child(data-id="child")
+              .packages
+                .packages__title Пакет “базовий карабін для дітей (22LR)”
+                .packages__wrapper
+                  .package 
+                    .package__left 
+                      h3 Карабін (22 LR) 1 особа
+                      .package__left_info 
+                        .package__left_price 
+                          svg
+                            use(href="/assets/icons.svg#Price")
+                          span 3 815  грн
+                        .package__left_time
+                          svg
+                            use(href="/assets/icons.svg#Clock2")
+                          span 2 години
+                    .package__center.dropdown 
+                      h3.dropdown__toggle 
+                        span У вартість входить:
+                        svg
+                          use(href="/assets/icons.svg#Arrow_for_dropdown")
+                      ul.dropdown__menu
+                        li БК 50 шт
+                        li Оренда карабіна
+                        li Інструктор
+                        li Оренда доріжки
+                        li Мішень
+                    .package__right 
+                      button.button_pa(data-btn="binotel-open")
+                        svg
+                          use(href="/assets/icons.svg#Calendar")
+                        span Записатися
+              .packages
+                .packages__title Пакет “базовий пістолет для дітей (22LR)”
+                .packages__wrapper
+                  .package 
+                    .package__left 
+                      h3 Пістолет (22 LR) 1 особа
+                      .package__left_info 
+                        .package__left_price 
+                          svg
+                            use(href="/assets/icons.svg#Price")
+                          span 3 715  грн
+                        .package__left_time
+                          svg
+                            use(href="/assets/icons.svg#Clock2")
+                          span 2 години
+                    .package__center.dropdown 
+                      h3.dropdown__toggle 
+                        span У вартість входить:
+                        svg
+                          use(href="/assets/icons.svg#Arrow_for_dropdown")
+                      ul.dropdown__menu
+                        li БК 50 шт 
+                        li Оренда Glock
+                        li Оренда доріжки
+                        li Мішень
+                    .package__right 
+                      button.button_pa(data-btn="binotel-open")
+                        svg
+                          use(href="/assets/icons.svg#Calendar")
+                        span Записатися
+            .prices_page__content_info(data-id="info")
+              .packages
+                .packages__title Індивідуальні або групові заняття  (2-6 осіб), пістолет.
+                .packages__wrapper 
+                  .package 
+                    .package__left 
+                      h3 Базовий рівень:
+                      .package__left_info 
+                        .package__left_time
+                          svg
+                            use(href="/assets/icons.svg#Clock2")
+                          div
+                            span Індивідуальне заняття — 3 години 
+                            span Групове заняття — 4 години
+                    .package__center.dropdown 
+                      h3.dropdown__toggle 
+                        span Що ви дізнаєтесь?
+                        svg
+                          use(href="/assets/icons.svg#Arrow_for_dropdown")
+                      ul.dropdown__menu 
+                        li Основи безпечного поводження зі зброєю
+                        li Підбір та налаштування спорядження
+                        li Основні частини пістолета; неповне розбирання та збирання пістолета
+                        li Робота з прицільними пристроями
+                        li Стійка, формування хвату, винос пістолета на лінію прицілювання
+                        li Обробка спускового гачка
+                        li Споряджання магазину
+                        li Заряджання, розряджання пістолета
+                        li Відпрацювання влучної стрільби
+                        li Вилучення пістолета з кобури
+                        li Переноси зброї між мішенями по фронту
+                        li Виконання учбових вправ
+                        li Підсумок заняття
+                        li Основи холостих тренувань для самостійної роботи
+                        li Робота з таймером
+                    .package__right 
+                      button.button_pa(data-btn="binotel-open")
+                        svg
+                          use(href="/assets/icons.svg#Calendar")
+                        span Записатися
+                  .package 
+                    .package__left 
+                      h3 Поглиблений рівень:
+                      .package__left_info 
+                        .package__left_time
+                          svg
+                            use(href="/assets/icons.svg#Clock2")
+                          div
+                            span Індивідуальне заняття — 3 години 
+                            span Групове заняття — 4 години
+                    .package__center.dropdown 
+                      h3.dropdown__toggle 
+                        span Що ви дізнаєтесь?
+                        svg
+                          use(href="/assets/icons.svg#Arrow_for_dropdown")
+                      ul.dropdown__menu 
+                        li Основи безпечного поводження зі зброєю
+                        li Стійка, формування хвату, винос пістолета на лінію прицілювання
+                        li Обробка спускового гачка
+                        li Відпрацювання влучної стрільби
+                        li Переноси зброї між мішенями по фронту та в глибину
+                        li Тактична, екстрена заміна магазину
+                        li Затримки під час стрільби та їх усунення
+                        li Зміна положень для стрільби
+                        li Стрільба з-за укриття
+                        li Переміщення між позиціями для стрільби
+                        li Стрільба сильною та слабкою рукою
+                        li Стрільба в русі
+                        li Тестування різних моделей зброї
+                        li Підсумок заняття
+                        li Рекомендації для подальших занять
+                    .package__right 
+                      button.button_pa(data-btn="binotel-open")
+                        svg
+                          use(href="/assets/icons.svg#Calendar")
+                        span Записатися                     
+              .packages 
+                .packages__title Індивідуальні або групові заняття  (2-6 осіб), карабін.
+                .packages__wrapper
+                  .package 
+                    .package__left 
+                      h3 Базовий рівень:
+                      .package__left_info 
+                        .package__left_time
+                          svg
+                            use(href="/assets/icons.svg#Clock2")
+                          div
+                            span Індивідуальне заняття — 3 години
+                            span Групове заняття — 4 години
+                    .package__center.dropdown 
+                      h3.dropdown__toggle 
+                        span Що ви дізнаєтесь?
+                        svg
+                          use(href="/assets/icons.svg#Arrow_for_dropdown")
+                      ul.dropdown__menu 
+                        li Основи безпечного поводження зі зброєю
+                        li Підбір та налаштування спорядження
+                        li Основні частини пістолета; неповне розбирання та збирання пістолета
+                        li Робота з прицільними пристроями
+                        li Положення готовності до стрільби
+                        li Стійка, утримання та вкладка, винос карабіна на лінію прицілювання
+                        li Обробка спускового гачка
+                        li Споряджання магазина
+                        li Заряджання, розряджання карабіна
+                        li Відпрацювання влучної стрільби
+                        li Тактична, екстрена заміна магазину
+                        li Переноси зброї між мішенями по фронту
+                        li Виконання учбових вправ
+                        li Підсумок заняття
+                        li Основи холостих тренувань для самостійної роботи
+                        li Робота з таймером
+                    .package__right 
+                      button.button_pa(data-btn="binotel-open")
+                        svg
+                          use(href="/assets/icons.svg#Calendar")
+                        span Записатися
+                  .package 
+                    .package__left 
+                      h3 Поглиблений рівень:
+                      .package__left_info 
+                        .package__left_time
+                          svg
+                            use(href="/assets/icons.svg#Clock2")
+                          div
+                            span Індивідуальні заняття — 2 заняття по 3 год
+                            span Групові заняття — 2 заняття по 4 години
+                    .package__center.dropdown 
+                      h3.dropdown__toggle 
+                        span Що ви дізнаєтесь?
+                        svg
+                          use(href="/assets/icons.svg#Arrow_for_dropdown")
+                      ul.dropdown__menu 
+                        li Основи безпечного поводження зі зброєю
+                        li Стійка, утримання та вкладка, винос карабіна на лінію прицілювання
+                        li Обробка спускового гачка
+                        li Відпрацювання влучної стрільби
+                        li Переноси зброї між мішенями по фронту та в глибину
+                        li Затримки під час стрільби та їх усунення
+                        li Зміна положень для стрільби
+                        li Стрільба з-за укриття
+                        li Стрільба з сильного та слабкого плеча
+                        li Переміщення між позиціями для стрільби
+                        li Стрільба в русі;
+                        li Підсумок заняття
+                        li Рекомендації для подальших занять.
+                    .package__right 
+                      button.button_pa(data-btn="binotel-open")
+                        svg
+                          use(href="/assets/icons.svg#Calendar")
+                        span Записатися
+
+        .prices_page__content(data-id="corporate-packages")
+          .prices_page__content_top 
+            .prices_page__content_title Корпоративні пакети
+          .prices_page__content_bottom
+            .packages
+              .packages__wrapper
+                .package 
+                  .package__left 
+                    h3 Пістолет на 10 людей
+                    .package__left_info 
+                      .package__left_price 
+                        svg
+                          use(href="/assets/icons.svg#Price")
+                        span 30 150  грн
+                      .package__left_time
+                        svg
+                          use(href="/assets/icons.svg#Clock2")
+                        span 3 години
+                  .package__center.dropdown 
+                    h3.dropdown__toggle 
+                      span У вартість входить:
+                      svg
+                        use(href="/assets/icons.svg#Arrow_for_dropdown")
+                    ul.dropdown__menu
+                      li Оренда пістолетів 10 шт
+                      li Оренда капонірів 2 шт
+                      li Бойовий комплект 10 коробок х 50 шт
+                      li Інструктори 2 особи
+                      li Мішені
+                  .package__right 
+                      button.button_pa(data-btn="binotel-open")
+                        svg
+                          use(href="/assets/icons.svg#Calendar")
+                        span Записатися
+                .package 
+                  .package__left 
+                    h3 Пістолет на 20 людей
+                    .package__left_info 
+                      .package__left_price 
+                        svg
+                          use(href="/assets/icons.svg#Price")
+                        span 60 300  грн
+                      .package__left_time
+                        svg
+                          use(href="/assets/icons.svg#Clock2")
+                        span 3 години
+                  .package__center.dropdown 
+                    h3.dropdown__toggle 
+                      span У вартість входить:
+                      svg
+                        use(href="/assets/icons.svg#Arrow_for_dropdown")
+                    ul.dropdown__menu
+                      li Пістолет 20 шт
+                      li Оренда капонірів 4 шт
+                      li Набоїв 20 коробок х 50 шт
+                      li Інструктори 4 особи
+                      li Мішені
+                  .package__right 
+                      button.button_pa(data-btn="binotel-open")
+                        svg
+                          use(href="/assets/icons.svg#Calendar")
+                        span Записатися
+                .package 
+                  .package__left 
+                    h3 Карабін на 10 людей 
+                    .package__left_info 
+                      .package__left_price 
+                        svg
+                          use(href="/assets/icons.svg#Price")
+                        span 53 650  грн
+                      .package__left_time
+                        svg
+                          use(href="/assets/icons.svg#Clock2")
+                        span 3 години
+                  .package__center.dropdown 
+                    h3.dropdown__toggle 
+                      span У вартість входить:
+                      svg
+                        use(href="/assets/icons.svg#Arrow_for_dropdown")
+                    ul.dropdown__menu
+                      li Оренда карабінів 10 шт
+                      li Оренда капонірів 2 шт
+                      li Набоїв 10 коробок х 50 шт
+                      li Інструктори 2 особи
+                      li Мішені
+                  .package__right 
+                      button.button_pa(data-btn="binotel-open")
+                        svg
+                          use(href="/assets/icons.svg#Calendar")
+                        span Записатися
+                .package 
+                  .package__left 
+                    h3 Карабін на 20 людей 
+                    .package__left_info 
+                      .package__left_price 
+                        svg
+                          use(href="/assets/icons.svg#Price")
+                        span 107 300  грн
+                      .package__left_time
+                        svg
+                          use(href="/assets/icons.svg#Clock2")
+                        span 3 години
+                  .package__center.dropdown 
+                    h3.dropdown__toggle 
+                      span У вартість входить:
+                      svg
+                        use(href="/assets/icons.svg#Arrow_for_dropdown")
+                    ul.dropdown__menu
+                      li Оренда карабінів 20 шт
+                      li Оренда капонірів 4 шт
+                      li Інструктори 4 особи
+                      li Мішені
+                  .package__right 
+                      button.button_pa(data-btn="binotel-open")
+                        svg
+                          use(href="/assets/icons.svg#Calendar")
+                        span Записатися
+                .package 
+                  .package__left 
+                    h3 Мікс пістолетів та карабінів на 10 людей
+                    .package__left_info 
+                      .package__left_price 
+                        svg
+                          use(href="/assets/icons.svg#Price")
+                        span 41 900  грн
+                      .package__left_time
+                        svg
+                          use(href="/assets/icons.svg#Clock2")
+                        span 3 години
+                  .package__center.dropdown 
+                    h3.dropdown__toggle 
+                      span У вартість входить:
+                      svg
+                        use(href="/assets/icons.svg#Arrow_for_dropdown")
+                    ul.dropdown__menu
+                      li Оренда пістолетів і карабінів по 5 шт
+                      li Оренда капонірів
+                      li Набоїв 5 коробок х 50 шт
+                      li Інструктори 2 особи
+                      li Мішені
+                  .package__right 
+                      button.button_pa(data-btn="binotel-open")
+                        svg
+                          use(href="/assets/icons.svg#Calendar")
+                        span Записатися
+                .package 
+                  .package__left 
+                    h3 Мікс пістолетів та карабінів на 20 людей
+                    .package__left_info 
+                      .package__left_price 
+                        svg
+                          use(href="/assets/icons.svg#Price")
+                        span 83 800  грн
+                      .package__left_time
+                        svg
+                          use(href="/assets/icons.svg#Clock2")
+                        span 3 години
+                  .package__center.dropdown 
+                    h3.dropdown__toggle 
+                      span У вартість входить:
+                      svg
+                        use(href="/assets/icons.svg#Arrow_for_dropdown")
+                    ul.dropdown__menu
+                      li Оренда пістолетів і карабінів по 10 шт
+                      li Оренда капонірів
+                      li Інструктори 4 особи
+                      li Мішені
+                  .package__right 
+                      button.button_pa(data-btn="binotel-open")
+                        svg
+                          use(href="/assets/icons.svg#Calendar")
+                        span Записатися       
+        
+        .prices_page__content(data-id="tccc")
+          .prices_page__content_top 
+            .prices_page__content_title Тактична медицина
+          .prices_page__content_bottom
+            .packages
+              .packages__wrapper
+                .package 
+                  .package__left 
+                    h3 TCCC ASM 
+                    .package__left_info 
+                      .package__left_price 
+                        svg
+                          use(href="/assets/icons.svg#Price")
+                        span 4 900  грн
+                      .package__left_time
+                        svg
+                          use(href="/assets/icons.svg#Clock2")
+                        span Від 4 до 6 годин від 5 до 20 чоловік
+                  .package__center
+                  .package__right 
+                      .info(id="open-pop-up-asm")
+                        svg
+                          use(href="/assets/icons.svg#Info")
+                        span Детальніше про курс
+                      button.button_pa(data-btn="binotel-open")
+                        svg
+                          use(href="/assets/icons.svg#Calendar")
+                        span Записатися
+                .package 
+                  .package__left 
+                    h3 TCCC CLS 
+                    .package__left_info 
+                      .package__left_price 
+                        svg
+                          use(href="/assets/icons.svg#Price")
+                        span 8 000  грн
+                      .package__left_time
+                        svg
+                          use(href="/assets/icons.svg#Clock2")
+                        span 2 дні від 5 до 20 чоловік
+                  .package__center
+                  .package__right 
+                    .info(id="open-pop-up-cls")
+                      svg
+                        use(href="/assets/icons.svg#Info")
+                      span Детальніше про курс
+                    button.button_pa(data-btn="binotel-open")
+                        svg
+                          use(href="/assets/icons.svg#Calendar")
+                        span Записатися
+
+        .prices_page__content(data-id="certificates")
+          .prices_page__content_top 
+            .prices_page__content_title Подарункові сертифікати
+          .prices_page__content_bottom
+            .packages
+              .packages__wrapper
+                .package 
+                  .package__img 
+                    img(src="/public_static/img/certificates/1.png" alt="certificates")
+                  .package__prices 
+                    h3 Курс "Базовий карабін"
+                    .package__prices_wrapper 
+                      svg
+                        use(href="/assets/icons.svg#Price")
+                      div 
+                        span Індивідуальний - 4 900 грн
+                        span 2 особи - 8 900 грн
+                        span 3 особи - 13 900 грн
+                        span 4 особи - 17 900 грн
+                        span 5 осіб - 20 900 грн
+                        span 6 осіб - 24 900 грн
+                      svg
+                        use(href="/assets/icons.svg#Clock2")
+                      div 
+                        span 2 години
+                        span 2 години
+                        span 3 години
+                        span 3 години
+                        span 3 години
+                        span 3 години
+                  .package__info.dropdown 
+                    h3.dropdown__toggle 
+                      span У вартість входить:
+                      svg
+                        use(href="/assets/icons.svg#Arrow_for_dropdown")
+                    ul.dropdown__menu
+                      li Знання з техніки безпеки
+                      li Основні принципи поводження зі зброєю
+                      li Базові навички стрільби
+                  .package__btn 
+                      button.button_pa(data-btn="binotel-open")
+                        svg
+                          use(href="/assets/icons.svg#Calendar")
+                        span Записатися
+                .package 
+                  .package__img 
+                    img(src="/public_static/img/certificates/2.png" alt="certificates")
+                  .package__prices 
+                    h3 Курс "Базовий пістолет"
+                    .package__prices_wrapper 
+                      svg
+                        use(href="/assets/icons.svg#Price")
+                      div 
+                        span Індивідуальний - 3900 грн
+                        span 2 особи - 5 900 грн
+                        span 3 особи - 9 900 грн
+                        span 4 особи - 11 900 грн
+                        span 5 осіб - 13 900 грн
+                        span 6 осіб - 16 800 грн
+                      svg
+                        use(href="/assets/icons.svg#Clock2")
+                      div 
+                        span 2 години
+                        span 2 години
+                        span 3 години
+                        span 3 години
+                        span 3 години
+                        span 3 години
+                  .package__info.dropdown 
+                    h3.dropdown__toggle 
+                      span У вартість входить:
+                      svg
+                        use(href="/assets/icons.svg#Arrow_for_dropdown")
+                    ul.dropdown__menu
+                      li Знання з техніки безпеки
+                      li Основні принципи поводження зі зброєю
+                      li Базові навички стрільби
+                  .package__btn 
+                      button.button_pa(data-btn="binotel-open")
+                        svg
+                          use(href="/assets/icons.svg#Calendar")
+                        span Записатися
+                .package 
+                  .package__img 
+                    img(src="/public_static/img/certificates/3.png" alt="certificates")
+                  .package__prices 
+                    h3 Full of emotions до 5-ти осіб 
+                    .package__prices_wrapper 
+                      svg
+                        use(href="/assets/icons.svg#Price")
+                      div 
+                        span 13 500  грн
+                      svg
+                        use(href="/assets/icons.svg#Clock2")
+                      div 
+                        span 2 години
+                  .package__info.dropdown 
+                    h3.dropdown__toggle 
+                      span У вартість входить:
+                      svg
+                        use(href="/assets/icons.svg#Arrow_for_dropdown")
+                    ul.dropdown__menu
+                      li Робота інструктора
+                      li Оренда доріжок
+                      li Оренда мішеней
+                      li 12 видів зброї: Glock 17 Gen 5,  Glock 26,  Glock 43x,  Glock 34,  Glock 19x,  Glock 21 45 ACP,  Beretta 92,  Canik SFx Rival,  Norinco 1911A1 45 ACP,  FN 503,  CZ Shadow 2,  CZ TS 2 Orange 
+                      li Калібр 9*19, кількість 220 шт.
+                      li Калібр 45 АСР, кількість 30 шт.
+                  .package__btn 
+                      button.button_pa(data-btn="binotel-open")
+                        svg
+                          use(href="/assets/icons.svg#Calendar")
+                        span Записатися
+                .package 
+                  .package__img 
+                    img(src="/public_static/img/certificates/4.png" alt="certificates")
+                  .package__prices 
+                    h3 Girls Power від 2-х до 5-ти осіб 
+                    .package__prices_wrapper 
+                      svg
+                        use(href="/assets/icons.svg#Price")
+                      div 
+                        span 6 000  грн
+                      svg
+                        use(href="/assets/icons.svg#Clock2")
+                      div 
+                        span 2 години
+                  .package__info.dropdown 
+                    h3.dropdown__toggle 
+                      span У вартість входить:
+                      svg
+                        use(href="/assets/icons.svg#Arrow_for_dropdown")
+                    ul.dropdown__menu
+                      li Робота інструктора
+                      li Оренда доріжок
+                      li Оренда мішеней
+                      li Капонір № 3
+                      li Оренда Glock 17 Gen 5,  Glock 43x,  Glock 34,  Glock 19x,  Glock 45 MOS FTO
+                      li Набої 9*19-150 шт.
+                  .package__btn 
+                      button.button_pa(data-btn="binotel-open")
+                        svg
+                          use(href="/assets/icons.svg#Calendar")
+                        span Записатися
+                .package 
+                  .package__img 
+                    img(src="/public_static/img/certificates/5.png" alt="certificates")
+                  .package__prices 
+                    h3 Gold до 2-х осіб
+                    .package__prices_wrapper 
+                      svg
+                        use(href="/assets/icons.svg#Price")
+                      div 
+                        span 3 000  грн
+                      svg
+                        use(href="/assets/icons.svg#Clock2")
+                      div 
+                        span 1 години
+                  .package__info.dropdown 
+                    h3.dropdown__toggle 
+                      span У вартість входить:
+                      svg
+                        use(href="/assets/icons.svg#Arrow_for_dropdown")
+                    ul.dropdown__menu
+                      li Робота інструктора
+                      li Оренда доріжок
+                      li Оренда мішеней
+                      li Оренда Glock 17 Gen 5,  Canik SFx Rival
+                      li Старший інструктор (заняття)
+                      li Капонір № 3
+                      li Калібр - 9*19, набої - 80 шт
+                  .package__btn 
+                      button.button_pa(data-btn="binotel-open")
+                        svg
+                          use(href="/assets/icons.svg#Calendar")
+                        span Записатися
+                .package 
+                  .package__img 
+                    img(src="/public_static/img/certificates/6.png" alt="certificates")
+                  .package__prices 
+                    h3 Silver до 2-х осіб
+                    .package__prices_wrapper 
+                      svg
+                        use(href="/assets/icons.svg#Price")
+                      div 
+                        span 2 200  грн
+                      svg
+                        use(href="/assets/icons.svg#Clock2")
+                      div 
+                        span 1 години
+                  .package__info.dropdown 
+                    h3.dropdown__toggle 
+                      span У вартість входить:
+                      svg
+                        use(href="/assets/icons.svg#Arrow_for_dropdown")
+                    ul.dropdown__menu
+                      li Робота інструктора
+                      li Оренда доріжок
+                      li Оренда мішеней
+                      li Оренда Glock 17 Gen 5
+                      li Капонір № 3
+                      li Старший інструктор (заняття)
+                      li Калібр - 9*19, набої - 50 шт
+                  .package__btn 
+                      button.button_pa(data-btn="binotel-open")
+                        svg
+                          use(href="/assets/icons.svg#Calendar")
+                        span Записатися 
+                .package 
+                  .package__img 
+                    img(src="/public_static/img/certificates/7.png" alt="certificates")
+                  .package__prices 
+                    h3 Friends до 5 осіб
+                    .package__prices_wrapper 
+                      svg
+                        use(href="/assets/icons.svg#Price")
+                      div 
+                        span 10 600  грн
+                      svg
+                        use(href="/assets/icons.svg#Clock2")
+                      div 
+                        span 2 години
+                  .package__info.dropdown 
+                    h3.dropdown__toggle 
+                      span У вартість входить:
+                      svg
+                        use(href="/assets/icons.svg#Arrow_for_dropdown")
+                    ul.dropdown__menu
+                      li Робота інструктора
+                      li Оренда доріжок
+                      li Оренда мішеней
+                      li 5 видів зброї: оренда Glock 17 Gen 5,  Glock 43x, Glock 34,  Glock 21 45 ACP,  Glock 19x 
+                      li Старший інструктор (заняття) 2 години
+                      li Капонір № 4 або № 5 (2 год)
+                      li Калібр - 9*19, набої -200 шт.
+                      li Калібр - 45, набої - 50 шт.
+                  .package__btn 
+                      button.button_pa(data-btn="binotel-open")
+                        svg
+                          use(href="/assets/icons.svg#Calendar")
+                        span Записатися
+
+        .prices_page__content(data-id="instructor_services")
+          .prices_page__content_top 
+            .prices_page__content_title Послуги інструктора
+          .prices_page__content_bottom
+            .packages
+              .packages__wrapper
+                .package 
+                  .package__left 
+                    h3 Заняття з інструктором
+                    .package__left_info 
+                      .package__left_price 
+                        svg
+                          use(href="/assets/icons.svg#Price")
+                        span 1 000  грн
+                      .package__left_time
+                        svg
+                          use(href="/assets/icons.svg#Clock2")
+                        span 1 година
+                  .package__center
+                  .package__right 
+                      button.button_pa(data-btn="binotel-open")
+                        svg
+                          use(href="/assets/icons.svg#Calendar")
+                        span Записатися
+                .package
+                  .package__left 
+                    h3 Заняття без інструктора  (самостійне заняття)
+                    .package__left_info 
+                      .package__left_price 
+                        svg
+                          use(href="/assets/icons.svg#Price")
+                        span Безкоштовно
+                      .package__left_time
+                        svg
+                          use(href="/assets/icons.svg#Clock2")
+                        span 1 година
+                  .package__center
+                  .package__right 
+                      button.button_pa(data-btn="binotel-open")
+                        svg
+                          use(href="/assets/icons.svg#Calendar")
+                        span Записатися
+
+        .prices_page__content(data-id="target_sales")
+          .prices_page__content_top 
+            .prices_page__content_title Продаж мішеней
+          .prices_page__content_bottom
+            .packages
+              .packages__wrapper
+                .package 
+                  .package__left 
+                    h3 Мішень картонна IPSC 
+                    .package__left_info 
+                      .package__left_price 
+                        svg
+                          use(href="/assets/icons.svg#Price")
+                        span 15  грн
+                      .package__left_time
+                        svg
+                          use(href="/assets/icons.svg#Clock2")
+                        span 1 година
+                  .package__center
+                  .package__right 
+                      button.button_pa(data-btn="binotel-open")
+                        svg
+                          use(href="/assets/icons.svg#Calendar")
+                        span Записатися
+                .package
+                  .package__left 
+                    h3 Мішень зелена 4 
+                    .package__left_info 
+                      .package__left_price 
+                        svg
+                          use(href="/assets/icons.svg#Price")
+                        span 15  грн
+                      .package__left_time
+                        svg
+                          use(href="/assets/icons.svg#Clock2")
+                        span 1 година
+                  .package__center
+                  .package__right 
+                      button.button_pa(data-btn="binotel-open")
+                        svg
+                          use(href="/assets/icons.svg#Calendar")
+                        span Записатися
+
+        .prices_page__content(data-id="shooting_lane_rental")
+          .prices_page__content_top 
+            .prices_page__content_title Оренда капонірів
+          .prices_page__content_bottom
+            .packages
+              .packages__wrapper
+                .package
+                  .package__img 
+                    img(src="/public_static/img/prices/1.jpg" alt="shooting_lane_rental")
+                  .package__left 
+                    h3 1 капонір (100 на 20м) 
+                    .package__left_info 
+                      .package__left_price 
+                        svg
+                          use(href="/assets/icons.svg#Price")
+                        span 2 500  грн
+                      .package__left_time
+                        svg
+                          use(href="/assets/icons.svg#Clock2")
+                        span 1 година
+                  .package__center
+                    p Тир для пристрілки зброї. У данному тирі один напряок для стрільби та 10 стрілецьких місць.
+                  .package__right 
+                    button.button_pa(data-btn="binotel-open")
+                      svg
+                        use(href="/assets/icons.svg#Calendar")
+                      span Записатися
+                .package
+                  .package__img 
+                    img(src="/public_static/img/prices/2.jpg" alt="shooting_lane_rental")
+                  .package__left 
+                    h3 2 капонір (100 на 60м) 
+                    .package__left_info 
+                      .package__left_price 
+                        svg
+                          use(href="/assets/icons.svg#Price")
+                        span 3 500  грн
+                      .package__left_time
+                        svg
+                          use(href="/assets/icons.svg#Clock2")
+                        span 1 година
+                  .package__center
+                    p Майданчик створенно для проведення занять зі стрільби з карабінів, а також для проведення занять з тактичної та практичної стрільби. У данному тирі один напряок для стрільби.
+                  .package__right 
+                    button.button_pa(data-btn="binotel-open")
+                      svg
+                        use(href="/assets/icons.svg#Calendar")
+                      span Записатися
+                .package
+                  .package__img 
+                    img(src="/public_static/img/prices/3.jpg" alt="shooting_lane_rental")
+                  .package__left 
+                    h3 3 капонір 25 м
+                    .package__left_info 
+                      .package__left_price 
+                        svg
+                          use(href="/assets/icons.svg#Price")
+                        span 1 500  грн
+                      .package__left_time
+                        svg
+                          use(href="/assets/icons.svg#Clock2")
+                        span 1 година
+                  .package__center
+                    p Тир для стрільби з пістолетів, карабінів пістолетного калібру та калібру .22LR. У даному капонірі один напрямок стільби та 10 стрілецьких місць.
+                  .package__right 
+                    button.button_pa(data-btn="binotel-open")
+                      svg
+                        use(href="/assets/icons.svg#Calendar")
+                      span Записатися
+                .package
+                  .package__img 
+                    img(src="/public_static/img/prices/4.jpg" alt="shooting_lane_rental")
+                  .package__left 
+                    h3 Капонір 4 - 8
+                    .package__left_info 
+                      .package__left_price 
+                        svg
+                          use(href="/assets/icons.svg#Price")
+                        span 1 500  грн
+                      .package__left_time
+                        svg
+                          use(href="/assets/icons.svg#Clock2")
+                        span 1 година
+                  .package__center
+                    p Тир для стрільби з пістолетів, карабінів пістолетного калібру та калібру .22LR. У даному капонірі три напрямоки для стільби.
+                  .package__right 
+                    button.button_pa(data-btn="binotel-open")
+                      svg
+                        use(href="/assets/icons.svg#Calendar")
+                      span Записатися
+                .package
+                  .package__img 
+                    img(src="/public_static/img/prices/5.jpg" alt="shooting_lane_rental")
+                  .package__left 
+                    h3 Тир 1 Оренда доріжки для пристрілки 
+                    .package__left_info 
+                      .package__left_price 
+                        svg
+                          use(href="/assets/icons.svg#Price")
+                        span 700  грн
+                      .package__left_time
+                        svg
+                          use(href="/assets/icons.svg#Clock2")
+                        span 1 година
+                  .package__center
+                    p Оренда доріжки для пристрілки зброї.
+                  .package__right 
+                    button.button_pa(data-btn="binotel-open")
+                      svg
+                        use(href="/assets/icons.svg#Calendar")
+                      span Записатися
+                .package
+                  .package__img 
+                    img(src="/public_static/img/prices/6.jpg" alt="shooting_lane_rental")
+                  .package__left 
+                    h3 Тир 2 Оренда доріжки
+                    .package__left_info 
+                      .package__left_price 
+                        svg
+                          use(href="/assets/icons.svg#Price")
+                        span 800  грн
+                      .package__left_time
+                        svg
+                          use(href="/assets/icons.svg#Clock2")
+                        span 1 година
+                  .package__center
+                    p Оренда доріжки для проведення занять зі стрільби з карабінів, а також для проведення занять з тактичної та практичної стрільби.
+                  .package__right 
+                    button.button_pa(data-btn="binotel-open")
+                      svg
+                        use(href="/assets/icons.svg#Calendar")
+                      span Записатися
+                .package
+                  .package__img 
+                    img(src="/public_static/img/prices/7.jpg" alt="shooting_lane_rental")
+                  .package__left 
+                    h3 Оренда доріжки Тир 3 - 8 
+                    .package__left_info 
+                      .package__left_price 
+                        svg
+                          use(href="/assets/icons.svg#Price")
+                        span 700  грн
+                      .package__left_time
+                        svg
+                          use(href="/assets/icons.svg#Clock2")
+                        span 1 година
+                  .package__center
+                    p Оренда доріжки для стрільби з пістолетів, карабінів пістолетного калібру та калібру .22LR.
+                  .package__right 
+                    button.button_pa(data-btn="binotel-open")
+                      svg
+                        use(href="/assets/icons.svg#Calendar")
+                      span Записатися
+                .package
+                  .package__left
+                    h3 Старший інструктор (заняття) 
+                    .package__left_info 
+                      .package__left_price 
+                        svg
+                          use(href="/assets/icons.svg#Price")
+                        span 1 000  грн
+                      .package__left_time
+                        svg
+                          use(href="/assets/icons.svg#Clock2")
+                        span 2 години
+                  .package__center
+                    p Тир для пристрілки зброї. У данному тирі один напряок для стрільби та 10 стрілецьких місць.
+                  .package__right 
+                    button.button_pa(data-btn="binotel-open")
+                      svg
+                        use(href="/assets/icons.svg#Calendar")
+                      span Записатися
+
+        .prices_page__content(data-id="pistol_rental")
+          .prices_page__content_top 
+            .prices_page__content_title Оренда пістолета
+          .prices_page__content_bottom
+            .packages
+              .packages__wrapper
+                .package
+                  .package__img 
+                    img(src="/public_static/img/shop/product.jpg" alt="shooting_lane_rental")
+                  .package__left 
+                    h3 Пістолет спортивний CZ TS 2 Orange 9x19 20rd 
+                    .package__left_info 
+                      .package__left_price 
+                        svg
+                          use(href="/assets/icons.svg#Price")
+                        span 350  грн
+                      .package__left_time
+                        svg
+                          use(href="/assets/icons.svg#Clock2")
+                        span 1 година
+                  .package__center
+                  .package__right 
+                    button.button_pa(data-btn="binotel-open")
+                      svg
+                        use(href="/assets/icons.svg#Calendar")
+                      span Записатися
+                .package
+                  .package__img 
+                    img(src="/public_static/img/shop/product.jpg" alt="shooting_lane_rental")
+                  .package__left 
+                    h3 Пістолет спортивний Glock 45 MOS кал. 9 мм (9х19) EU 
+                    .package__left_info 
+                      .package__left_price 
+                        svg
+                          use(href="/assets/icons.svg#Price")
+                        span 200  грн
+                      .package__left_time
+                        svg
+                          use(href="/assets/icons.svg#Clock2")
+                        span 1 година
+                  .package__center
+                  .package__right 
+                    button.button_pa(data-btn="binotel-open")
+                      svg
+                        use(href="/assets/icons.svg#Calendar")
+                      span Записатися
+                .package
+                  .package__img 
+                    img(src="/public_static/img/shop/product.jpg" alt="shooting_lane_rental")
+                  .package__left 
+                    h3 Спортивний пістолет CZ P-10 С кал.9x19 
+                    .package__left_info 
+                      .package__left_price 
+                        svg
+                          use(href="/assets/icons.svg#Price")
+                        span 300  грн
+                      .package__left_time
+                        svg
+                          use(href="/assets/icons.svg#Clock2")
+                        span 1 година
+                  .package__center
+                  .package__right 
+                    button.button_pa(data-btn="binotel-open")
+                      svg
+                        use(href="/assets/icons.svg#Calendar")
+                      span Записатися
+                .package
+                  .package__img 
+                    img(src="/public_static/img/shop/product.jpg" alt="shooting_lane_rental")
+                  .package__left 
+                    h3 Пістолет спортивний Glock 44 кал. 22LR 
+                    .package__left_info 
+                      .package__left_price 
+                        svg
+                          use(href="/assets/icons.svg#Price")
+                        span 200  грн
+                      .package__left_time
+                        svg
+                          use(href="/assets/icons.svg#Clock2")
+                        span 1 година
+                  .package__center
+                  .package__right 
+                    button.button_pa(data-btn="binotel-open")
+                      svg
+                        use(href="/assets/icons.svg#Calendar")
+                      span Записатися
+                .package
+                  .package__img 
+                    img(src="/public_static/img/shop/product.jpg" alt="shooting_lane_rental")
+                  .package__left 
+                    h3 Пістолет спортивний Glock 17 Gen5 MOS кал. 9 мм (9х19) EU 
+                    .package__left_info 
+                      .package__left_price 
+                        svg
+                          use(href="/assets/icons.svg#Price")
+                        span 200  грн
+                      .package__left_time
+                        svg
+                          use(href="/assets/icons.svg#Clock2")
+                        span 1 година
+                  .package__center
+                  .package__right 
+                    button.button_pa(data-btn="binotel-open")
+                      svg
+                        use(href="/assets/icons.svg#Calendar")
+                      span Записатися
+                .package
+                  .package__img 
+                    img(src="/public_static/img/shop/product.jpg" alt="shooting_lane_rental")
+                  .package__left 
+                    h3 Спортивний пістолет Beretta 92FS 
+                    .package__left_info 
+                      .package__left_price 
+                        svg
+                          use(href="/assets/icons.svg#Price")
+                        span 300  грн
+                      .package__left_time
+                        svg
+                          use(href="/assets/icons.svg#Clock2")
+                        span 1 година
+                  .package__center
+                  .package__right 
+                    button.button_pa(data-btn="binotel-open")
+                      svg
+                        use(href="/assets/icons.svg#Calendar")
+                      span Записатися
+                .package
+                  .package__img 
+                    img(src="/public_static/img/shop/product.jpg" alt="shooting_lane_rental")
+                  .package__left 
+                    h3 Пістолет спортивний Canik TP9 SFx Rival кал. 9 мм (9х19). Grey 
+                    .package__left_info 
+                      .package__left_price 
+                        svg
+                          use(href="/assets/icons.svg#Price")
+                        span 300  грн
+                      .package__left_time
+                        svg
+                          use(href="/assets/icons.svg#Clock2")
+                        span 1 година
+                  .package__center
+                  .package__right 
+                    button.button_pa(data-btn="binotel-open")
+                      svg
+                        use(href="/assets/icons.svg#Calendar")
+                      span Записатися
+                .package
+                  .package__img 
+                    img(src="/public_static/img/shop/product.jpg" alt="shooting_lane_rental")
+                  .package__left 
+                    h3 Пістолет спортивний Glock 43X кал. 9 мм (9х19) USA 
+                    .package__left_info 
+                      .package__left_price 
+                        svg
+                          use(href="/assets/icons.svg#Price")
+                        span 200  грн
+                      .package__left_time
+                        svg
+                          use(href="/assets/icons.svg#Clock2")
+                        span 1 година
+                  .package__center
+                  .package__right 
+                    button.button_pa(data-btn="binotel-open")
+                      svg
+                        use(href="/assets/icons.svg#Calendar")
+                      span Записатися
+                .package
+                  .package__img 
+                    img(src="/public_static/img/shop/product.jpg" alt="shooting_lane_rental")
+                  .package__left 
+                    h3 Пістолет Glock 34 Gen5 MOS кал. 9мм (9х19) EU 
+                    .package__left_info 
+                      .package__left_price 
+                        svg
+                          use(href="/assets/icons.svg#Price")
+                        span 200  грн
+                      .package__left_time
+                        svg
+                          use(href="/assets/icons.svg#Clock2")
+                        span 1 година
+                  .package__center
+                  .package__right 
+                    button.button_pa(data-btn="binotel-open")
+                      svg
+                        use(href="/assets/icons.svg#Calendar")
+                      span Записатися
+                .package
+                  .package__img 
+                    img(src="/public_static/img/shop/product.jpg" alt="shooting_lane_rental")
+                  .package__left 
+                    h3 Пістолет Glock 19x 
+                    .package__left_info 
+                      .package__left_price 
+                        svg
+                          use(href="/assets/icons.svg#Price")
+                        span 200  грн
+                      .package__left_time
+                        svg
+                          use(href="/assets/icons.svg#Clock2")
+                        span 1 година
+                  .package__center
+                  .package__right 
+                    button.button_pa(data-btn="binotel-open")
+                      svg
+                        use(href="/assets/icons.svg#Calendar")
+                      span Записатися
+                .package
+                  .package__img 
+                    img(src="/public_static/img/shop/product.jpg" alt="shooting_lane_rental")
+                  .package__left 
+                    h3 Пістолет спортивний Glock 26 Gen5 кал. 9мм (9х19) 
+                    .package__left_info 
+                      .package__left_price 
+                        svg
+                          use(href="/assets/icons.svg#Price")
+                        span 200  грн
+                      .package__left_time
+                        svg
+                          use(href="/assets/icons.svg#Clock2")
+                        span 1 година
+                  .package__center
+                  .package__right 
+                    button.button_pa(data-btn="binotel-open")
+                      svg
+                        use(href="/assets/icons.svg#Calendar")
+                      span Записатися
+                .package
+                  .package__img 
+                    img(src="/public_static/img/shop/product.jpg" alt="shooting_lane_rental")
+                  .package__left 
+                    h3 Пістолет спортивний Glock 21 Gen4 кал. 45 AUTO 
+                    .package__left_info 
+                      .package__left_price 
+                        svg
+                          use(href="/assets/icons.svg#Price")
+                        span 200  грн
+                      .package__left_time
+                        svg
+                          use(href="/assets/icons.svg#Clock2")
+                        span 1 година
+                  .package__center
+                  .package__right 
+                    button.button_pa(data-btn="binotel-open")
+                      svg
+                        use(href="/assets/icons.svg#Calendar")
+                      span Записатися
+                .package
+                  .package__img 
+                    img(src="/public_static/img/shop/product.jpg" alt="shooting_lane_rental")
+                  .package__left 
+                    h3 Спортивний пістолет FN503 9 мм 
+                    .package__left_info 
+                      .package__left_price 
+                        svg
+                          use(href="/assets/icons.svg#Price")
+                        span 250  грн
+                      .package__left_time
+                        svg
+                          use(href="/assets/icons.svg#Clock2")
+                        span 1 година
+                  .package__center
+                  .package__right 
+                    button.button_pa(data-btn="binotel-open")
+                      svg
+                        use(href="/assets/icons.svg#Calendar")
+                      span Записатися
+                .package
+                  .package__img 
+                    img(src="/public_static/img/shop/product.jpg" alt="shooting_lane_rental")
+                  .package__left 
+                    h3 Пістолет спортивний CZ Shadow 2 Urban Grey кал. 9 мм (9x19) 
+                    .package__left_info 
+                      .package__left_price 
+                        svg
+                          use(href="/assets/icons.svg#Price")
+                        span 350  грн
+                      .package__left_time
+                        svg
+                          use(href="/assets/icons.svg#Clock2")
+                        span 1 година
+                  .package__center
+                  .package__right 
+                    button.button_pa(data-btn="binotel-open")
+                      svg
+                        use(href="/assets/icons.svg#Calendar")
+                      span Записатися
+        
+        .prices_page__content(data-id="carbine_rental")
+          .prices_page__content_top 
+            .prices_page__content_title Оренда карабінів
+          .prices_page__content_bottom
+            .packages
+              .packages__wrapper
+                .package
+                  .package__img 
+                    img(src="/public_static/img/prices/9.jpg" alt="shooting_lane_rental")
+                  .package__left 
+                    h3 IWI ZION 15 SBR - калібр .223 Rem 12,5 
+                    .package__left_info 
+                      .package__left_price 
+                        svg
+                          use(href="/assets/icons.svg#Price")
+                        span 250  грн
+                      .package__left_time
+                        svg
+                          use(href="/assets/icons.svg#Clock2")
+                        span 1 година
+                  .package__center
+                  .package__right 
+                    button.button_pa(data-btn="binotel-open")
+                      svg
+                        use(href="/assets/icons.svg#Calendar")
+                      span Записатися
+                .package
+                  .package__img 
+                    img(src="/public_static/img/prices/9.jpg" alt="shooting_lane_rental")
+                  .package__left 
+                    h3 ZRO Delta Ready Series ZR01 16" - калібр 223 Rem 
+                    .package__left_info 
+                      .package__left_price 
+                        svg
+                          use(href="/assets/icons.svg#Price")
+                        span 250  грн
+                      .package__left_time
+                        svg
+                          use(href="/assets/icons.svg#Clock2")
+                        span 1 година
+                  .package__center
+                  .package__right 
+                    button.button_pa(data-btn="binotel-open")
+                      svg
+                        use(href="/assets/icons.svg#Calendar")
+                      span Записатися
+                .package
+                  .package__img 
+                    img(src="/public_static/img/prices/9.jpg" alt="shooting_lane_rental")
+                  .package__left 
+                    h3 Diamondback DB15 BLACK - калібр 223 REM 16' 
+                    .package__left_info 
+                      .package__left_price 
+                        svg
+                          use(href="/assets/icons.svg#Price")
+                        span 250  грн
+                      .package__left_time
+                        svg
+                          use(href="/assets/icons.svg#Clock2")
+                        span 1 година
+                  .package__center
+                  .package__right 
+                    button.button_pa(data-btn="binotel-open")
+                      svg
+                        use(href="/assets/icons.svg#Calendar")
+                      span Записатися
+                .package
+                  .package__img 
+                    img(src="/public_static/img/prices/9.jpg" alt="shooting_lane_rental")
+                  .package__left 
+                    h3 Grand Power Stribog SR9A3 10" - калібр 9х21 
+                    .package__left_info 
+                      .package__left_price 
+                        svg
+                          use(href="/assets/icons.svg#Price")
+                        span 250  грн
+                      .package__left_time
+                        svg
+                          use(href="/assets/icons.svg#Clock2")
+                        span 1 година
+                  .package__center
+                  .package__right 
+                    button.button_pa(data-btn="binotel-open")
+                      svg
+                        use(href="/assets/icons.svg#Calendar")
+                      span Записатися
+                .package
+                  .package__img 
+                    img(src="/public_static/img/prices/9.jpg" alt="shooting_lane_rental")
+                  .package__left 
+                    h3 WBP Midi Jack Tactical - калібр 223 Rem 
+                    .package__left_info 
+                      .package__left_price 
+                        svg
+                          use(href="/assets/icons.svg#Price")
+                        span 250  грн
+                      .package__left_time
+                        svg
+                          use(href="/assets/icons.svg#Clock2")
+                        span 1 година
+                  .package__center
+                  .package__right 
+                    button.button_pa(data-btn="binotel-open")
+                      svg
+                        use(href="/assets/icons.svg#Calendar")
+                      span Записатися
+                .package
+                  .package__img 
+                    img(src="/public_static/img/prices/9.jpg" alt="shooting_lane_rental")
+                  .package__left 
+                    h3 Tippmann Arms M4-22 - калібр ELITE-L 22lr 16'' 
+                    .package__left_info 
+                      .package__left_price 
+                        svg
+                          use(href="/assets/icons.svg#Price")
+                        span 250  грн
+                      .package__left_time
+                        svg
+                          use(href="/assets/icons.svg#Clock2")
+                        span 1 година
+                  .package__center
+                  .package__right 
+                    button.button_pa(data-btn="binotel-open")
+                      svg
+                        use(href="/assets/icons.svg#Calendar")
+                      span Записатися

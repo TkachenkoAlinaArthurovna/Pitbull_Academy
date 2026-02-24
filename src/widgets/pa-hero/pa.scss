@@ -1,0 +1,232 @@
+/* ====== base ====== */
+.pa {
+  position: relative;
+  z-index: 1;
+
+  width: calc(100vw - 8.333vw);
+  height: max(600px, 42.7vw);
+  margin: 0 auto;
+  margin-bottom: max(80px, 10.41vw);
+  @media (max-width: 1024px) {
+    height: auto;
+  }
+  @media (max-width: 768px) {
+    width: calc(100vw - 40px);
+  }
+  @media (max-width: 480px) {
+    width: calc(100vw - 24px);
+    margin-bottom: 40px;
+  }
+}
+
+.pa__container {
+  display: flex;
+  gap: 4.16vw;
+  height: 100%;
+  @media (max-width: 1024px) {
+    flex-direction: column;
+  }
+}
+
+/* ====== left brand card ====== */
+.pa__brand {
+  position: relative;
+  flex: 1;
+  height: 100%;
+  border-radius: max(40px, 4.16vw);
+  overflow: hidden;
+  @media (max-width: 1360px) {
+    display: none;
+  }
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.pa__brand-inner {
+  position: relative;
+  height: 100%;
+  padding: 40px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.pa__brand-top,
+.pa__brand-bottom {
+  @include center;
+}
+
+.pa__brand-top svg,
+.pa__brand-bottom svg {
+  width: 22.91vw;
+  height: 4.375vw;
+}
+
+.pa__brand-logo {
+  @include center;
+  svg {
+    width: auto;
+    height: 25.2vw;
+  }
+}
+
+/* ====== middle stats ====== */
+.pa__stats {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  @media (max-width: 480px) {
+    padding: 0 12px;
+  }
+}
+.stat {
+  position: relative;
+  @include center;
+  width: max-content;
+  height: 35%;
+  img {
+    width: auto;
+    height: 100%;
+    @media (max-width: 1024px) {
+      width: 65.1vw;
+      height: auto;
+    }
+    @media (max-width: 480px) {
+      width: 100%;
+      height: auto;
+    }
+  }
+  @media (max-width: 480px) {
+    width: 100%;
+  }
+}
+.stat-first {
+  transform: rotate(-4deg);
+  @media (max-width: 480px) {
+    transform: rotate(-2deg);
+  }
+}
+.stat-second {
+  transform: rotate(4deg) translateY(-20px);
+  @media (max-width: 480px) {
+    transform: rotate(2deg) translateY(-20px);
+  }
+  img {
+    transform: scaleX(-1);
+  }
+  .stat__tag {
+    position: absolute;
+    top: 20px;
+    left: auto;
+    right: 20px;
+  }
+}
+.stat-third {
+  transform: rotate(-4deg) translateY(-40px);
+  @media (max-width: 480px) {
+    transform: rotate(-2deg) translateY(-40px);
+  }
+}
+.stat__content {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.stat__tag {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding: 4px 12px;
+  border-radius: 100px;
+  @include text-16-600;
+  color: $white;
+  background: $black;
+  @media (max-width: 480px) {
+    @include text-12-600;
+  }
+}
+.stat__wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 70%;
+
+  @media (max-width: 768px) {
+    gap: 12px;
+  }
+  @media (max-width: 480px) {
+    gap: 8px;
+  }
+}
+.stat__value {
+  @include text-92-72-48-600;
+}
+.stat__text {
+  text-align: center;
+
+  @include text-20-500;
+  @media (max-width: 480px) {
+    @include text-14-500;
+  }
+}
+
+/* ====== right about ====== */
+.pa__about {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-between;
+  gap: 40px;
+  padding: max(40px, 3.125vw);
+  border-radius: max(40px, 4.16vw);
+  background: $white;
+  @media (max-width: 480px) {
+    gap: 28px;
+    padding: 40px 20px;
+  }
+}
+
+.pa__about-title {
+  @include text-92-72-48-600;
+}
+
+.pa__about-media {
+  width: 100%;
+  height: 15vw;
+  border-radius: 40px;
+  overflow: hidden;
+  @media (max-width: 1024px) {
+    height: 376px;
+  }
+  @media (max-width: 480px) {
+    height: 49.06vw;
+  }
+}
+
+.pa__about-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pa__about-text {
+  @include text-20-500;
+  @media (max-width: 480px) {
+    @include text-14-500;
+  }
+}

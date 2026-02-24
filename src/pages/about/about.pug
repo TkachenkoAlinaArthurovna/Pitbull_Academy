@@ -1,0 +1,24 @@
+extends /index.pug
+block content
+  section.about_top 
+    img.bg(src="/assets/images/about/bg_top.jpg" alt="background")
+    img.bg_1360(src="/assets/images/about/bg_1360.jpg" alt="background")
+    img.bg_mob(src="/assets/images/about/bg_mob.jpg" alt="background")
+    .about_top__content
+      - const pageTitle = "ПРО НАС"
+      include /widgets/title/title.pug
+      .about_top__wrapper 
+        .about_top__left 
+          p Pitbull Academy - єдиний в Україні сертифікований стрілецький полігон, розташований у селі Мотижин Київської області. Тут створені умови як для професійних військових, які хочуть покращити свої навички, так і для цивільних, які вперше бажають спробувати стрільбу. 
+        .about_top__right
+          h2 До нас приходять корпоративні клієнти, спортсмени, чоловіки та жінки - кожен знаходить свій формат занять. 
+          p На полігоні знаходиться 8 капонірів, обладнаних сучасними мішенями та всім необхідним для повноцінних занять. Тут ми навчаємо стрільбі з пістолета чи карабіна і запрошуємо бажаючих на індивідуальні, групові чи сімейні тренування. Програма занять  підбирається під рівень підготовки та мету кожного учасника, а навчання вибудовується так, щоб прогрес був зрозумілим і відчутним одразу.
+  .about_top__bg_mob_bottom 
+    img(src="/assets/images/about/bg_mob_bottom.jpg" alt="background")
+  section.about_next 
+    img.bg(src="/assets/images/about/bg.jpg" alt="background")
+    .about_next__content 
+      h2 Заняття зі стрільби в Pitbull Academy проводять професійні інструктори – чоловіки та жінки з реальним практичним досвідом. 
+      p У команді працюють колишні військові, представники силових структур та чемпіони зі спортивної стрільби. Вони навчають не лише техніці, а й виховують відповідальне ставлення до зброї.
+  include /widgets/show_prices/show_prices.pug
+  

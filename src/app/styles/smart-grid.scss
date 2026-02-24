@@ -1,0 +1,466 @@
+@use "sass:math";
+
+$columns: 24;
+$atom: calc(100% / #{$columns});
+$break_lg: 1200px;
+$break_md: 992px;
+$break_sm: 768px;
+$break_xs: 560px;
+$offset: 20px;
+$offset_lg: $offset;
+$offset_md: $offset;
+$offset_sm: $offset;
+$offset_xs: $offset;
+$offset_one_side: math.div($offset, 2);
+$offset_lg_one_side: math.div($offset_lg, 2);
+$offset_md_one_side: math.div($offset_md, 2);
+$offset_sm_one_side: math.div($offset_sm, 2);
+$offset_xs_one_side: math.div($offset_xs, 2);
+$fields: 60px;
+$fields_sm: 10px;
+
+@mixin wrapper-full() {
+  padding-right: $fields;
+  padding-left: $fields;
+
+  @include sm-block {
+    padding-right: $fields_sm;
+    padding-left: $fields_sm;
+  }
+}
+
+@mixin row-offsets() {
+  margin-right: ($offset_one_side * -1);
+  margin-left: ($offset_one_side * -1);
+}
+
+@mixin col-offsets($type) {
+  #{$type}-left: $offset_one_side;
+  #{$type}-right: $offset_one_side;
+}
+
+@mixin wrapper() {
+  max-width: 1920px;
+  margin: 0 auto;
+
+  @include wrapper-full;
+}
+
+@mixin row-flex() {
+  display: flex;
+  flex-wrap: wrap;
+
+  @include row-offsets;
+}
+
+@mixin row-float() {
+  @include row-offsets;
+  @include clearfix;
+}
+
+@mixin row-ib() {
+  @include row-offsets;
+}
+
+@mixin col() {
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+
+  @include col-offsets(margin);
+}
+
+@mixin col-float() {
+  float: left;
+}
+
+@mixin col-ib() {
+  display: inline-block;
+  vertical-align: top;
+}
+
+@mixin col-padding() {
+  overflow-wrap: break-word;
+
+  @include col-offsets(padding);
+}
+
+@mixin size($n) {
+  width: calc((100% / #{$columns}) * #{$n} - #{$offset});
+}
+
+@mixin size-lg($n) {
+  @include lg(width, calc((100% / #{$columns}) * #{$n} - #{$offset_lg}));
+}
+
+@mixin size-md($n) {
+  @include md(width, calc((100% / #{$columns}) * #{$n} - #{$offset_md}));
+}
+
+@mixin size-sm($n) {
+  @include sm(width, calc((100% / #{$columns}) * #{$n} - #{$offset_sm}));
+}
+
+@mixin size-xs($n) {
+  @include xs(width, calc((100% / #{$columns}) * #{$n} - #{$offset_xs}));
+}
+
+@mixin shift($n) {
+  margin-right: calc((100% / #{$columns}) * #{$n} + #{$offset_one_side});
+  margin-left: calc((100% / #{$columns}) * #{$n} + #{$offset_one_side});
+}
+
+@mixin shift-left($n) {
+  margin-left: calc((100% / #{$columns}) * #{$n} + #{$offset_one_side});
+}
+
+@mixin shift-right($n) {
+  margin-right: calc((100% / #{$columns}) * #{$n} + #{$offset_one_side});
+}
+
+@mixin shift-padding($n) {
+  padding-right: calc((100% / #{$columns}) * #{$n} + #{$offset_one_side});
+  padding-left: calc((100% / #{$columns}) * #{$n} + #{$offset_one_side});
+}
+
+@mixin shift-padding-left($n) {
+  padding-left: calc((100% / #{$columns}) * #{$n} + #{$offset_one_side});
+}
+
+@mixin shift-padding-right($n) {
+  padding-right: calc((100% / #{$columns}) * #{$n} + #{$offset_one_side});
+}
+
+@mixin shift-lg($n) {
+  @include lg(margin-left, calc((100% / #{$columns}) * #{$n} + #{$offset_lg_one_side}));
+  @include lg(margin-right, calc((100% / #{$columns}) * #{$n} + #{$offset_lg_one_side}));
+}
+
+@mixin shift-lg-left($n) {
+  @include lg(margin-left, calc((100% / #{$columns}) * #{$n} + #{$offset_lg_one_side}));
+}
+
+@mixin shift-lg-right($n) {
+  @include lg(margin-right, calc((100% / #{$columns}) * #{$n} + #{$offset_lg_one_side}));
+}
+
+@mixin shift-lg-padding($n) {
+  @include lg(padding-left, calc((100% / #{$columns}) * #{$n} + #{$offset_lg_one_side}));
+  @include lg(padding-right, calc((100% / #{$columns}) * #{$n} + #{$offset_lg_one_side}));
+}
+
+@mixin shift-lg-padding-left($n) {
+  @include lg(padding-left, calc((100% / #{$columns}) * #{$n} + #{$offset_lg_one_side}));
+}
+
+@mixin shift-lg-padding-right($n) {
+  @include lg(padding-right, calc((100% / #{$columns}) * #{$n} + #{$offset_lg_one_side}));
+}
+
+@mixin shift-md($n) {
+  @include md(margin-left, calc((100% / #{$columns}) * #{$n} + #{$offset_md_one_side}));
+  @include md(margin-right, calc((100% / #{$columns}) * #{$n} + #{$offset_md_one_side}));
+}
+
+@mixin shift-md-left($n) {
+  @include md(margin-left, calc((100% / #{$columns}) * #{$n} + #{$offset_md_one_side}));
+}
+
+@mixin shift-md-right($n) {
+  @include md(margin-right, calc((100% / #{$columns}) * #{$n} + #{$offset_md_one_side}));
+}
+
+@mixin shift-md-padding($n) {
+  @include md(padding-left, calc((100% / #{$columns}) * #{$n} + #{$offset_md_one_side}));
+  @include md(padding-right, calc((100% / #{$columns}) * #{$n} + #{$offset_md_one_side}));
+}
+
+@mixin shift-md-padding-left($n) {
+  @include md(padding-left, calc((100% / #{$columns}) * #{$n} + #{$offset_md_one_side}));
+}
+
+@mixin shift-md-padding-right($n) {
+  @include md(padding-right, calc((100% / #{$columns}) * #{$n} + #{$offset_md_one_side}));
+}
+
+@mixin shift-sm($n) {
+  @include sm(margin-left, calc((100% / #{$columns}) * #{$n} + #{$offset_sm_one_side}));
+  @include sm(margin-right, calc((100% / #{$columns}) * #{$n} + #{$offset_sm_one_side}));
+}
+
+@mixin shift-sm-left($n) {
+  @include sm(margin-left, calc((100% / #{$columns}) * #{$n} + #{$offset_sm_one_side}));
+}
+
+@mixin shift-sm-right($n) {
+  @include sm(margin-right, calc((100% / #{$columns}) * #{$n} + #{$offset_sm_one_side}));
+}
+
+@mixin shift-sm-padding($n) {
+  @include sm(padding-left, calc((100% / #{$columns}) * #{$n} + #{$offset_sm_one_side}));
+  @include sm(padding-right, calc((100% / #{$columns}) * #{$n} + #{$offset_sm_one_side}));
+}
+
+@mixin shift-sm-padding-left($n) {
+  @include sm(padding-left, calc((100% / #{$columns}) * #{$n} + #{$offset_sm_one_side}));
+}
+
+@mixin shift-sm-padding-right($n) {
+  @include sm(padding-right, calc((100% / #{$columns}) * #{$n} + #{$offset_sm_one_side}));
+}
+
+@mixin shift-xs($n) {
+  @include xs(margin-left, calc((100% / #{$columns}) * #{$n} + #{$offset_xs_one_side}));
+  @include xs(margin-right, calc((100% / #{$columns}) * #{$n} + #{$offset_xs_one_side}));
+}
+
+@mixin shift-xs-left($n) {
+  @include xs(margin-left, calc((100% / #{$columns}) * #{$n} + #{$offset_xs_one_side}));
+}
+
+@mixin shift-xs-right($n) {
+  @include xs(margin-right, calc((100% / #{$columns}) * #{$n} + #{$offset_xs_one_side}));
+}
+
+@mixin shift-xs-padding($n) {
+  @include xs(padding-left, calc((100% / #{$columns}) * #{$n} + #{$offset_xs_one_side}));
+  @include xs(padding-right, calc((100% / #{$columns}) * #{$n} + #{$offset_xs_one_side}));
+}
+
+@mixin shift-xs-padding-left($n) {
+  @include xs(padding-left, calc((100% / #{$columns}) * #{$n} + #{$offset_xs_one_side}));
+}
+
+@mixin shift-xs-padding-right($n) {
+  @include xs(padding-right, calc((100% / #{$columns}) * #{$n} + #{$offset_xs_one_side}));
+}
+
+@mixin lg($name, $value) {
+  @media screen and (max-width: $break_lg) {
+    #{$name}: $value;
+  }
+}
+
+@mixin lg-block() {
+  @media screen and (max-width: $break_lg) {
+    @content;
+  }
+}
+
+@mixin md($name, $value) {
+  @media screen and (max-width: $break_md) {
+    #{$name}: $value;
+  }
+}
+
+@mixin md-block() {
+  @media screen and (max-width: $break_md) {
+    @content;
+  }
+}
+
+@mixin sm($name, $value) {
+  @media screen and (max-width: $break_sm) {
+    #{$name}: $value;
+  }
+}
+
+@mixin sm-block() {
+  @media screen and (max-width: $break_sm) {
+    @content;
+  }
+}
+
+@mixin xs($name, $value) {
+  @media screen and (max-width: $break_xs) {
+    #{$name}: $value;
+  }
+}
+
+@mixin xs-block() {
+  @media screen and (max-width: $break_xs) {
+    @content;
+  }
+}
+
+@mixin from($min_width) {
+  @media screen and (min-width: $min_width) {
+    @content;
+  }
+}
+
+@mixin to($max_width) {
+  @media screen and (max-width: $max_width) {
+    @content;
+  }
+}
+
+@mixin from-to($min_width, $max_width) {
+  @media screen and (min-width: $min_width) and (max-width: $max_width) {
+    @content;
+  }
+}
+
+@mixin u-row-flex($offset) {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: math.div($offset, -2);
+  margin-left: math.div($offset, -2);
+}
+
+@mixin u-col($offset) {
+  box-sizing: border-box;
+  margin-right: math.div($offset, 2);
+  margin-left: math.div($offset, 2);
+  overflow-wrap: break-word;
+}
+
+@mixin u-size($n, $columns, $offset) {
+  width: calc((100% / #{$columns}) * #{$n} - #{$offset});
+}
+
+@mixin reset() {
+  body,
+  div,
+  dl,
+  dt,
+  dd,
+  ul,
+  li,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  pre,
+  code,
+  form,
+  fieldset,
+  input,
+  textarea,
+  p,
+  blockquote,
+  th,
+  td {
+    padding: 0;
+    margin: 0;
+  }
+
+  table {
+    border-spacing: 0;
+    border-collapse: collapse;
+  }
+
+  fieldset,
+  img,
+  abbr {
+    border: 0;
+  }
+
+  address,
+  caption,
+  cite,
+  code,
+  dfn,
+  em,
+  strong,
+  th,
+  var {
+    font-style: normal;
+    font-weight: normal;
+  }
+
+  ul li {
+    list-style: none;
+  }
+
+  caption,
+  th {
+    text-align: left;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: 100%;
+    font-weight: normal;
+  }
+
+  sup {
+    vertical-align: text-top;
+  }
+
+  sub {
+    vertical-align: text-bottom;
+  }
+
+  input,
+  textarea,
+  select {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+  }
+
+  legend {
+    color: #000;
+  }
+
+  article,
+  aside,
+  details,
+  figcaption,
+  figure,
+  footer,
+  header,
+  hgroup,
+  menu,
+  nav,
+  section,
+  main {
+    display: block;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@mixin debug($background, $outline) {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+
+  > div {
+    height: inherit;
+
+    @include wrapper;
+
+    > div {
+      height: inherit;
+
+      @include row-flex;
+
+      > div {
+        @include col;
+        @include size(1);
+
+        height: inherit;
+        outline: $outline;
+        background: $background;
+      }
+    }
+  }
+}
+
+@mixin clearfix() {
+  &::after {
+    clear: both;
+    display: block;
+    content: "";
+  }
+}

@@ -1,0 +1,199 @@
+@use "./vars.scss" as *;
+@use "./mixins.scss" as *;
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  color: $black;
+  background: $grey;
+}
+
+.page__inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+  max-width: 100vw;
+}
+
+.page__content {
+  flex-grow: 1;
+}
+
+/* ===== Global scrollbar ===== */
+/* ===== GLOBAL ===== */
+// html,
+// body {
+//   scrollbar-width: thin;
+//   scrollbar-color: #000 #fff;
+// }
+
+/* scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+/* ❌ ВБИВАЄМО СТРІЛКИ */
+::-webkit-scrollbar-button:single-button {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+::-webkit-scrollbar-button {
+  display: block;
+  background: transparent;
+  width: 0;
+  height: 0;
+}
+
+/* трек */
+::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+/* повзунок */
+::-webkit-scrollbar-thumb {
+  background-color: #000;
+  border-radius: 10px;
+  border: 2px solid #fff;
+}
+
+main {
+  height: 100%;
+}
+
+.menu-lock,
+.no-scroll {
+  overflow: hidden;
+}
+
+.background {
+  position: fixed;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+}
+
+.button_pa {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: max-content;
+  padding: 14px 28px 14px 32px;
+  border-radius: 1000px;
+  background: $black;
+  color: $white;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  @media (max-width: 480px) {
+    padding: 12px 20px;
+  }
+  span {
+    @include text-16-600;
+    color: $white;
+    @media (max-width: 480px) {
+      @include text-12-600;
+    }
+  }
+  svg {
+    width: 24px;
+    height: 16px;
+    @media (max-width: 480px) {
+      width: 18px;
+      height: 12px;
+    }
+  }
+  &:hover {
+    background: $beige;
+  }
+}
+
+.card_wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: max(40px, 3.125vw);
+  border-radius: max(40px, 4.16vw);
+  background: $white;
+  @media (max-width: 480px) {
+    padding: 32px 20px;
+    border-radius: 20px;
+  }
+}
+
+.card_video {
+  position: relative;
+  border-radius: max(40px, 4.16vw);
+  overflow: hidden;
+  @media (max-width: 480px) {
+    border-radius: 20px;
+  }
+}
+
+.title {
+  @include text-92-72-48-600;
+  margin-bottom: max(40px, 3.125vw);
+  @media (max-width: 480px) {
+    margin-bottom: 20px;
+  }
+}
+
+.navigation {
+  position: absolute;
+  bottom: 20px;
+  left: 80px;
+  display: none;
+  gap: 20px;
+  @media (max-width: 1360px) {
+    display: flex;
+  }
+  @media (max-width: 1024px) {
+    top: 0;
+    right: 0;
+    left: auto;
+  }
+  @media (max-width: 480px) {
+    gap: 8px;
+  }
+  svg {
+    width: 76px;
+    height: 52px;
+    cursor: pointer;
+    @media (max-width: 480px) {
+      width: 28px;
+      height: 40px;
+    }
+  }
+}
+
+.swiper-button-disabled {
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+.bwcrm-btn-widget-action {
+  opacity: 0;
+  visibility: hidden;
+}
+
+#bwcrm-widget-wrapper .bwcrm-header {
+  background-color: $beige !important;
+}
+#bwcrm-widget-wrapper
+  .bwcrm-visit-details
+  .bwcrm-visit-details-select
+  .bwcrm-visit-details-select-item
+  .bwcrm-visit-details-select-item-addon {
+  background-color: $beige !important;
+}
+.bwcrm-wrapper .bwcrm-primary-button {
+  background-color: $beige !important;
+}

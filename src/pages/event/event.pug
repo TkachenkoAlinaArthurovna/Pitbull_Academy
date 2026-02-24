@@ -1,0 +1,73 @@
+extends /index.pug
+block content
+  img(class="background " src="/assets/images/bg.png")
+  - const pageTitle = "Тренувальний матч з пістолету та КПК «Pitbull Weekend Match»"
+  - const pageTitleClass = "title_for_page--event"
+  include /widgets/title/title.pug
+  .event_page
+    .event_page__wrapper 
+      .event_page__card.card_wrapper
+        .event_page__card_top 
+          a.event_page__card_btn_back(href="/events")
+            svg
+              use(href="/assets/icons.svg#Arrow_right")
+            span Назад
+        .event_page__card_bottom
+          .event_page__card_bottom_left 
+            .event_page__card_wrapper_img 
+              img(src="/public_static/img/event_card.jpg" alt="event")
+          .event_page__card_bottom_right
+            .event_page__card_location_date 
+              .event_page__card_location
+                svg
+                  use(href="/assets/icons.svg#Location")
+                span Київська область, с. Мотижин
+              .event_page__card_date 
+                svg
+                  use(href="/assets/icons.svg#Calendar")
+                span 9-10 сер, 2025
+            .event_page__card_text 
+              p Всім привіт!
+              h3 Реєстрація на тренувальний матч з пістолету та КПК «Pitbull Weekend Match» відкриється сьогодні о 12.00.
+              ul 
+                li Дата проведення: 13.12.2025 
+                li Кількість учасників: 42
+                li Кількість сквадів: 6
+                li Максимальна кількість учасників в сквадах: 7
+                li Кількість вправ: 6
+                li Кількість пострілів: 120
+                li Реєстраційний внесок: 1200 грн.
+              h3 Розклад матчу:
+              ul 
+                li 8.00 - 8.30 - реєстрація учасників 1 зміни (сквади 1-3)
+                li 8.30 - 8:50 - хот-рендж
+                li 9:00 - 12.30 - виконання вправ учасниками сквадів 1-3
+              ul 
+                li 11.30 - 12.00 - реєстрація учасників 2 зміни (сквади 4-6)
+                li 12.00 - 12.20 - хот-рендж
+                li 12.30 - 15.00 - виконання вправ учасниками сквадів 4-6
+            button.button_pa(data-btn="binotel-open")
+              svg
+                use(href="/assets/icons.svg#Calendar")
+              span Записатися
+    .event_page__slider
+      .event_page__slider_top
+        .event_page__slider_title.title Останні події
+        .navigation
+          svg.event_page__nav.event_page__nav--prev
+            use(href="/assets/icons.svg#Big_arrow_left")
+          svg.event_page__nav.event_page__nav--next
+            use(href="/assets/icons.svg#Big_arrow_right")
+      .swiper 
+        .swiper-wrapper 
+          - for (let i = 0; i < 4; i++)
+            a.event_card.swiper-slide(href="/event")
+                .event_card__img
+                  img(src="/public_static/img/event_card.jpg" alt="event")
+                h3 Змагання у Мотижині
+                .event_card__date 
+                  svg
+                      use(href="/assets/icons.svg#Calendar")
+                  span 05 тра, 2025
+
+

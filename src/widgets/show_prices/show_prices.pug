@@ -1,0 +1,16 @@
+.show_prices 
+  //- Video background
+  .show_prices__bg
+    video.show_prices__bg-video(autoplay loop playsinline muted preload="metadata")
+      source(src="/public_static/videos/hero_m.mp4" media="(max-width: 768px)")
+      source(src="/public_static/videos/hero_web.mp4")
+    .show_prices__overlay
+    
+    .show_prices__container
+      svg.logo-dog
+        use(href="/assets/icons.svg#Logo")
+      h2 Ціни у Pitbull Academy
+      a.show_prices__button.button_pa(href="./")
+        span Дізнатися більше
+        svg
+          use(href="/assets/icons.svg#Arrow_right")

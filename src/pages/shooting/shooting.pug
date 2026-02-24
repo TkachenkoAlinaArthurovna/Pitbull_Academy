@@ -1,0 +1,38 @@
+extends /index.pug
+block content
+  section.shooting_top
+    img.bg(src="/assets/images/shooting/bg.jpg" alt="background")
+    img.bg_1360(src="/assets/images/shooting/bg_1360.jpg" alt="background")
+    img.bg_1024(src="/assets/images/shooting/bg_1024.jpg" alt="background")
+    img.bg_768(src="/assets/images/shooting/bg_mob.jpg" alt="background")
+    .shooting_top__content 
+      - const pageTitle = "СТРІЛЬБИЩЕ"
+      include /widgets/title/title.pug
+      .shooting_top__wrapper 
+        .shooting_top__left 
+          h2 Pitbull Academy — це тренувально-дозвільний комплекс, що поєднує тактичну підготовку та тренування.
+        .shooting_top__right 
+          p Місце, де кожен може випробувати себе, перезавантажитися та отримати нові враження в безпечних умовах. Знаємо все, що стосується зброї та навчаємо культури правильного поводження з нею.
+          p До послуг відвідувачів понад 80 стрілецьких місць, сучасне оснащення, оренда/продаж зброї, зони відпочинку, роздягальні.
+    .shooting_top__bg_mob_bottom 
+      img(src="/assets/images/shooting/bg_mob_bottom.jpg" alt="background")
+  section.shooting_gallery 
+    .shooting_gallery__wrapper
+      .shooting_gallery__title.title Галерея
+      .navigation
+        svg.shooting_gallery__nav.shooting_gallery__nav--prev
+          use(href="/assets/icons.svg#Big_arrow_left")
+        svg.shooting_gallery__nav.shooting_gallery__nav--next
+          use(href="/assets/icons.svg#Big_arrow_right")
+    .shooting_gallery__swiper_wrapper
+      .swiper 
+        .swiper-wrapper
+          .swiper-slide.gallery_slide
+            img(src="/public_static/img/shooting/gallery_1.jpg" alt="shooting")
+          .swiper-slide.gallery_slide
+            img(src="/public_static/img/shooting/gallery_2.jpg" alt="shooting")
+          .swiper-slide.gallery_slide
+            img(src="/public_static/img/shooting/gallery_1.jpg" alt="shooting")
+          .swiper-slide.gallery_slide
+            img(src="/public_static/img/shooting/gallery_2.jpg" alt="shooting")
+  include /widgets/show_prices/show_prices.pug
