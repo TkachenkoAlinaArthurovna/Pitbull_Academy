@@ -1,6 +1,6 @@
 extends /index.pug
 block content
-  img(class="background " src="/assets/images/bg.png")
+  img(class="background " src="/assets/images/bg/bg.png")
   - const pageTitle = "ЗМАГАННЯ ТА ПОДІЇ"
   include /widgets/title/title.pug
   .tabs 
@@ -13,7 +13,7 @@ block content
     - for (let i = 0; i < 10; i++)
       a.event_card.swiper-slide(href="/event")
           .event_card__img
-            img(src="/public_static/img/event_card.jpg" alt="event")
+            img(src="/public_static/img/events/event_card.jpg" alt="event")
           h3 Змагання у Мотижині
           .event_card__date 
             svg

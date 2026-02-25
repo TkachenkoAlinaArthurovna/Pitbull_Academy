@@ -42,6 +42,41 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.key === "Escape") closeMenu();
   });
 
+  const header = document.querySelector(".header");
+
+  const smoothScrollTo = (id) => {
+    const section = document.querySelector(id);
+    if (!section) return;
+
+    const offset =
+      section.getBoundingClientRect().top + window.pageYOffset - (header?.offsetHeight || 0) - 200;
+
+    window.scrollTo({
+      top: offset,
+      behavior: "smooth",
+    });
+  };
+
+  const handleSmartAnchor = (selector, id) => {
+    document.querySelectorAll(selector).forEach((link) => {
+      link.addEventListener("click", (e) => {
+        const isHome = window.location.pathname === "/" || window.location.pathname.endsWith("index.html");
+
+        if (isHome) {
+          e.preventDefault();
+          smoothScrollTo(id);
+          closeMenu();
+        }
+        // якщо не home → просто перехід на /#id
+      });
+    });
+  };
+
+  // 🔥 підключаємо
+  handleSmartAnchor('a[href="/#pavlo"]', "#pavlo");
+  handleSmartAnchor('a[href="/#partners"]', "#partners");
+  handleSmartAnchor('a[href="#contacts"]', "#contacts"); // якщо контакти на всіх сторінках
+
   // document.querySelectorAll(".menu-card").forEach((card) => {
   //   const icon = card.querySelector(".menu-card__icon");
   //   const rotate = card.dataset.rotate || getComputedStyle(card).getPropertyValue("--rotate");

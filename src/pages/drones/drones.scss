@@ -1,0 +1,446 @@
+.drones_benefits {
+  position: relative;
+  z-index: 0;
+  height: calc(var(--vh, 1vh) * 100);
+  &__bg {
+    width: 100%;
+    height: auto;
+    transform: translateY(-25%);
+    @media (max-width: 1024px) {
+      display: none;
+    }
+  }
+  &__bg_mob {
+    width: 100%;
+    height: auto;
+    display: none;
+    // transform: translateY(-25%);
+    @media (max-width: 1024px) {
+      display: block;
+    }
+  }
+  &__wrapper {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    width: calc(100vw - 40px);
+    padding: max(28px, 3.125vw);
+    border-radius: 40px;
+    background: $white;
+    @media (max-width: 1360px) {
+      gap: 20px;
+    }
+    @media (max-width: 1024px) {
+      flex-direction: column;
+    }
+    @media (max-width: 480px) {
+      width: calc(100vw - 24px);
+    }
+  }
+  &__left {
+    width: 50%;
+    @include text-36-500;
+    @media (max-width: 1360px) {
+      min-width: 280px;
+      width: auto;
+    }
+    @media (max-width: 480px) {
+      @include text-18-500;
+    }
+  }
+  &__right {
+    display: flex;
+    gap: 40px;
+    width: 50%;
+    @media (max-width: 1360px) {
+      width: auto;
+    }
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 8px;
+    }
+  }
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    @media (max-width: 768px) {
+      flex-direction: row;
+    }
+    svg {
+      width: max(40px, 3.125vw);
+      height: max(40px, 3.125vw);
+    }
+    span {
+      text-align: center;
+      @include text-16-500;
+      @media (max-width: 768px) {
+        text-align: start;
+      }
+      @media (max-width: 480px) {
+        @include text-14-500;
+      }
+    }
+  }
+}
+.drones_template {
+  position: relative;
+  z-index: 1;
+  width: calc(100vw - 40px);
+  margin: 0 auto;
+  margin-bottom: 20px;
+  @media (max-width: 768px) {
+    padding: 40px 20px;
+  }
+  @media (max-width: 480px) {
+    width: calc(100vw - 24px);
+  }
+  &__wrapper {
+    display: flex;
+    gap: 60px;
+    @media (max-width: 1360px) {
+      flex-direction: column;
+    }
+    @media (max-width: 480px) {
+      gap: 20px;
+    }
+  }
+  &__left {
+    h2 {
+      @include text-92-72-48-600;
+      text-align: start;
+      margin-bottom: 40px;
+      @media (max-width: 480px) {
+        margin-bottom: 20px;
+      }
+    }
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: max(40px, 4.16vw);
+      @media (max-width: 480px) {
+        border-radius: 20px;
+      }
+    }
+  }
+  &__right {
+    h3 {
+      @include text-36-500;
+      margin-bottom: 20px;
+      @media (max-width: 480px) {
+        @include text-24-500;
+      }
+    }
+    h4 {
+      font-family: "Noto Sans";
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 140%;
+      letter-spacing: -0.8px;
+      margin-bottom: 20px;
+      @media (max-width: 480px) {
+        @include text-14-700;
+      }
+    }
+    span {
+      display: block;
+      margin-bottom: 4px;
+      font-family: "Noto Sans";
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 140%;
+      letter-spacing: -0.8px;
+      @media (max-width: 480px) {
+        @include text-14-700;
+      }
+    }
+    p {
+      @include text-16-500;
+      margin-bottom: 20px;
+      @media (max-width: 480px) {
+        @include text-14-500;
+      }
+    }
+    ul {
+      margin-bottom: 20px;
+    }
+    ul li {
+      position: relative;
+      margin-bottom: 4px;
+      padding-left: 10px;
+      @include text-16-500;
+      @media (max-width: 480px) {
+        @include text-14-500;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        width: 3px;
+        height: 3px;
+        border-radius: 50%;
+        background: $black;
+      }
+    }
+  }
+  &__btn {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 40px;
+    @media (max-width: 768px) {
+      flex-direction: column-reverse;
+      gap: 20px;
+    }
+    button {
+      flex: 1;
+      justify-content: center;
+      gap: 20px;
+      padding: 24px 32px;
+      @media (max-width: 768px) {
+        width: 100%;
+      }
+      @media (max-width: 480px) {
+        padding: 18px 24px;
+      }
+      svg {
+        width: 20.522px;
+        height: 19.992px;
+        @media (max-width: 480px) {
+          width: 15.392px;
+          height: 14.993px;
+        }
+      }
+      span {
+        @include text-24-500;
+        @media (max-width: 480px) {
+          @include text-18-500;
+        }
+      }
+    }
+    .info {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      height: min-content;
+      cursor: pointer;
+      svg {
+        width: 16px;
+        height: 16px;
+      }
+      span {
+        padding-top: 2px;
+        @include text-12-500;
+      }
+    }
+  }
+}
+.drones_videos {
+  position: relative;
+  z-index: 1;
+  width: calc(100vw - 40px);
+  margin: 0 auto;
+  margin-bottom: 20px;
+  @media (max-width: 768px) {
+    padding: 40px 20px;
+  }
+  @media (max-width: 480px) {
+    width: calc(100vw - 24px);
+  }
+  &__title {
+    @media (max-width: 1360px) {
+      text-align: start;
+    }
+  }
+  &__wrapper {
+    display: flex;
+    gap: 40px;
+    @media (max-width: 1360px) {
+      flex-direction: column;
+      gap: 20px;
+    }
+    .hero__sound {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      cursor: pointer;
+      svg {
+        @media (max-width: 768px) {
+          width: 100px;
+          height: 100px;
+        }
+        @media (max-width: 480px) {
+          width: 80px;
+          height: 80px;
+        }
+        circle {
+          fill: rgba(1, 11, 19, 0.2);
+          backdrop-filter: blur(220px);
+        }
+      }
+    }
+  }
+  &__left {
+    position: relative;
+    width: 50%;
+    @media (max-width: 1360px) {
+      width: 100%;
+    }
+    video {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: max(40px, 4.16vw);
+      @media (max-width: 480px) {
+        border-radius: 20px;
+      }
+    }
+  }
+  &__right {
+    position: relative;
+    width: 50%;
+    @media (max-width: 1360px) {
+      width: 100%;
+    }
+    video {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: max(40px, 4.16vw);
+      @media (max-width: 480px) {
+        border-radius: 20px;
+      }
+    }
+  }
+}
+
+.drones_gallery {
+  position: relative;
+  z-index: 100;
+  margin-bottom: 20px;
+  @media (max-width: 480px) {
+    margin-bottom: 12px;
+  }
+  &__wrapper {
+    position: relative;
+    width: calc(100vw - 40px);
+    padding: 80px 60px;
+    margin: 0 auto;
+    @media (max-width: 1024px) {
+      padding: 60px 40px 150px 40px;
+    }
+    @media (max-width: 480px) {
+      padding: 40px 20px 100px 20px;
+    }
+  }
+  &__title {
+    text-align: start;
+  }
+  .navigation {
+    position: absolute;
+    z-index: 2;
+    top: 80px;
+    right: 60px;
+    left: auto;
+    bottom: auto;
+    display: flex;
+    @media (max-width: 1024px) {
+      top: 60px;
+      right: 40px;
+    }
+    @media (max-width: 480px) {
+      top: 40px;
+      right: 20px;
+    }
+  }
+  &__swiper_wrapper {
+    width: 100%;
+  }
+  .swiper-slide {
+    width: max(540px, 37.5vw);
+    height: max(360px, 25vw);
+    border-radius: max(28px, 2.08vw);
+    overflow: hidden;
+    @media (max-width: 768px) {
+      width: 300px;
+      height: 200px;
+      border-radius: 12px;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+.drones_slogan {
+  position: relative;
+  z-index: 1;
+  width: calc(100vw - 40px);
+  margin: 0 auto;
+  margin-top: max(100px, 7.29vw);
+  margin-bottom: max(100px, 7.29vw);
+  @media (max-width: 480px) {
+    width: calc(100vw - 24px);
+    margin-top: 80px;
+    margin-bottom: 80px;
+  }
+  img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 72.9vw;
+    height: auto;
+  }
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    div {
+      position: relative;
+      font-family: "Noto Sans";
+      font-size: 10.41vw;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 76%; /* 152px */
+      letter-spacing: -0.41vw;
+      text-transform: uppercase;
+      color: rgba(0, 0, 0, 0);
+      span {
+        position: absolute;
+        color: $black;
+        will-change: left, right;
+      }
+    }
+    div:nth-child(2) {
+      margin-bottom: 8vw;
+    }
+    .word_2,
+    .word_4 {
+      color: $beige;
+    }
+    .word_1 {
+      left: 0;
+    }
+    .word_2 {
+      left: 5vw;
+    }
+    .word_3 {
+      right: 5vw;
+    }
+    .word_4 {
+      right: 0;
+    }
+  }
+}

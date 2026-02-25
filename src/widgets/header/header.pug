@@ -118,7 +118,7 @@ header.header
   // Menu
   // =====================
   .menu
-    img(class="background-menu" src="/assets/images/bg.png")
+    img(class="background-menu" src="/assets/images/bg/bg.png")
     .menu__wrapper
 
       // -------- LEFT BLOCK --------
@@ -126,7 +126,7 @@ header.header
         h2.menu__title Що вас цікавить?
 
         .menu__cards
-          a.menu-card(href="#")
+          a.menu-card(href="/prices?tab=shooting_lane_rental")
             .menu-card__bg 
               img(class="bg_1" src="/assets/images/cards/card.png")
               img(class="bg_2" src="/assets/images/cards/card_2.png")
@@ -136,7 +136,7 @@ header.header
                   use(href="/assets/icons.svg#Rent")
               .menu-card__text ОРЕНДА КАПОНІРІВ
 
-          a.menu-card(href="#")
+          a.menu-card(href="/prices?tab=group-classes")
             .menu-card__bg 
               img(class="bg_1" src="/assets/images/cards/card.png")
               img(class="bg_2" src="/assets/images/cards/card_2.png")
@@ -146,7 +146,7 @@ header.header
                   use(href="/assets/icons.svg#Courses")
               .menu-card__text ГРУПОВІ ЗАНЯТТЯ
 
-          a.menu-card(href="#")
+          a.menu-card(href="/prices?tab=individual-classes")
             .menu-card__bg 
               img(class="bg_1" src="/assets/images/cards/card.png")
               img(class="bg_2" src="/assets/images/cards/card_2.png")
@@ -156,7 +156,7 @@ header.header
                   use(href="/assets/icons.svg#Individual")
               .menu-card__text ІНДИВІДУАЛЬНІ ЗАНЯТТЯ
 
-          a.menu-card(href="#")
+          a.menu-card(href="/shop")
             .menu-card__bg 
               img(class="bg_1" src="/assets/images/cards/card.png")
               img(class="bg_2" src="/assets/images/cards/card_2.png")
@@ -225,11 +225,11 @@ header.header
                 use(href="/assets/icons.svg#Menu_weapon_store")
               span Магазин зброї
 
-          li
-            a(href="/killhouse")
-              svg.menu__logo_item
-                use(href="/assets/icons.svg#Menu_airsoft")
-              span Kill House
+          //- li
+          //-   a(href="/killhouse")
+          //-     svg.menu__logo_item
+          //-       use(href="/assets/icons.svg#Menu_airsoft")
+          //-     span Kill House
 
           li
             a(href="/relax")
@@ -238,25 +238,25 @@ header.header
               span Зона відпочинку
 
           li
-            a(href="/certificates")
+            a(href="/prices?tab=certificates")
               svg.menu__logo_item
                 use(href="/assets/icons.svg#Menu_certificate")
               span Подарункові сертифікати
 
           li
-            a(href="/pavlo")
+            a(href="/#pavlo")
               svg.menu__logo_item
                 use(href="/assets/icons.svg#Menu_Pavlo")
               span Павло Чайка
 
           li
-            a(href="/partners")
+            a(href="/#partners")
               svg.menu__logo_item
                 use(href="/assets/icons.svg#Menu_partners")
               span Партнери
 
           li
-            a(href="/contacts")
+            a(href="#contacts")
               svg.menu__logo_item
                 use(href="/assets/icons.svg#Menu_contacts")
               span Контакти

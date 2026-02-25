@@ -1,0 +1,174 @@
+.drones_page_hero {
+  position: relative;
+  z-index: 1;
+
+  width: calc(100vw - 40px);
+  margin: 0 auto;
+  margin-top: 100px;
+  margin-bottom: 20px;
+  @media (max-width: 768px) {
+    margin-top: 80px;
+  }
+  @media (max-width: 480px) {
+    width: calc(100vw - 24px);
+    margin-bottom: 12px;
+  }
+  &__bg {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 120px);
+    border-radius: max(40px, 4.16vw);
+    overflow: hidden;
+    @media (max-width: 768px) {
+      height: calc(100vh - 100px);
+    }
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(270deg, rgba(23, 26, 31, 0) 0%, #171a1f 100%);
+  }
+  &__title {
+    position: absolute;
+    top: max(40px, 4.16vw);
+    left: max(20px, 3.125vw);
+    @include text-92-72-48-600;
+    color: $white;
+    @media (max-width: 1024px) {
+      max-width: 300px;
+      text-align: start;
+    }
+  }
+  &__container {
+    position: absolute;
+    inset: 0;
+    color: $white;
+    .hero__sound.desktop {
+      @media (max-width: 1024px) {
+        display: none;
+      }
+    }
+  }
+  &__sound {
+    position: absolute;
+    bottom: max(20px, 3.125vw);
+    right: max(20px, 3.125vw);
+    cursor: pointer;
+    .watch-svg__circle {
+      fill: rgba(1, 11, 19, 0.2);
+      backdrop-filter: blur(220px);
+    }
+    @media (max-width: 1024px) {
+      position: relative;
+      bottom: 0;
+      right: 0;
+    }
+    svg {
+      @media (max-width: 768px) {
+        width: 100px;
+        height: 100px;
+      }
+      @media (max-width: 480px) {
+        width: 80px;
+        height: 80px;
+      }
+    }
+  }
+  &__content {
+    position: absolute;
+    bottom: max(34px, 3.125vw);
+    left: max(20px, 3.125vw);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 29vw;
+    @media (max-width: 1360px) {
+      width: 50vw;
+    }
+    @media (max-width: 1024px) {
+      right: max(20px, 3.125vw);
+      width: auto;
+    }
+    .hero__sound.mob {
+      display: none;
+      @media (max-width: 1024px) {
+        display: block;
+      }
+    }
+    h2 {
+      @include text-36-500;
+      @media (max-width: 480px) {
+        @include text-24-500;
+      }
+    }
+    p {
+      @include text-20-500;
+      @media (max-width: 480px) {
+        display: none;
+      }
+    }
+  }
+  &__content_right {
+    position: absolute;
+    top: max(40px, 4.16vw);
+    right: max(20px, 3.125vw);
+    max-width: 240px;
+    display: flex;
+    flex-direction: column;
+    gap: max(20px, 3.125vw);
+    @media (max-width: 480px) {
+      display: none;
+    }
+    h2 {
+      margin-bottom: 4px;
+      @include text-24-500;
+    }
+    p {
+      @include text-16-500;
+    }
+  }
+  &__scroll {
+    position: absolute;
+    z-index: 2;
+    bottom: max(20px, 3.125vw);
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    width: 68px;
+    height: 68px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100px;
+    background: rgba(247, 247, 247, 0.2);
+    overflow: hidden;
+    svg {
+      animation: homeDownArrowAnim 2s ease-in-out infinite;
+    }
+    @media (max-width: 1360px) {
+      display: none;
+    }
+  }
+  @keyframes homeDownArrowAnim {
+    0% {
+      transform: translateY(-50px);
+    }
+
+    45% {
+      transform: translateY(0px);
+    }
+
+    55% {
+      transform: translateY(0px);
+    }
+
+    100% {
+      transform: translateY(50px);
+    }
+  }
+}

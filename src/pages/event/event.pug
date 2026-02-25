@@ -1,6 +1,6 @@
 extends /index.pug
 block content
-  img(class="background " src="/assets/images/bg.png")
+  img(class="background " src="/assets/images/bg/bg.png")
   - const pageTitle = "Тренувальний матч з пістолету та КПК «Pitbull Weekend Match»"
   - const pageTitleClass = "title_for_page--event"
   include /widgets/title/title.pug
@@ -15,7 +15,7 @@ block content
         .event_page__card_bottom
           .event_page__card_bottom_left 
             .event_page__card_wrapper_img 
-              img(src="/public_static/img/event_card.jpg" alt="event")
+              img(src="/public_static/img/events/event_card.jpg" alt="event")
           .event_page__card_bottom_right
             .event_page__card_location_date 
               .event_page__card_location
@@ -63,7 +63,7 @@ block content
           - for (let i = 0; i < 4; i++)
             a.event_card.swiper-slide(href="/event")
                 .event_card__img
-                  img(src="/public_static/img/event_card.jpg" alt="event")
+                  img(src="/public_static/img/events/event_card.jpg" alt="event")
                 h3 Змагання у Мотижині
                 .event_card__date 
                   svg

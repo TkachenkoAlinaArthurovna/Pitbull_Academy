@@ -1,6 +1,91 @@
 extends /index.pug
 block content
-  img(class="background " src="/assets/images/bg.png")
+  img(class="background " src="/assets/images/bg/bg.png")
   - const pageTitle = "ТАКТИЧНА МЕДИЦИНА"
+  - const pageClass = "tccc_page"
   include /widgets/title/title.pug
+  include /widgets/tccc-hero/tccc.pug
+
+  section.tccc_template.card_wrapper
+    .tccc_template__wrapper 
+      .tccc_template__left 
+        h2 Курс "TCCC ASM"
+        span (All Service Members)
+        img(src="/assets/images/tccc/tccc_1.jpg" alt="tccc")
+      .tccc_template__right
+        h3 Кому підходить?
+        ul 
+          li Цивільним особам, які хочуть навчитися надавати першу медичну допомогу в  екстрімальних ситуаціях
+          li Військовослужбовцям, поліції, спецпідрозділам
+          li Громадянським, які хочуть опанувати базові навички першої допомоги в бойових умовах
+          li Інструкторам та рятувальникам
+        h3 Цілі курсу:
+        ul 
+          li Переміщення та евакуація пораненого із зони вогню
+          li Навчити надання екстреної медичної допомоги при пораненнях
+          li Навчити працювати у стресових та бойових умовах
+          li Освоїти застосування медичних засобів першої допомоги
+        .tccc_template__card 
+          .tccc_template__card_item 
+            h3 Тривалість курсу:
+            div 
+              svg
+                use(href="/assets/icons.svg#Clock2")
+              span 1 день від 4 до 6 годин і кількості від  5 до 20 чоловік    
+          .tccc_template__card_item 
+            h3 Вартість курсу:
+            div 
+              svg
+                use(href="/assets/icons.svg#Price")
+              span 1500 грн/чол
+        .tccc_template__btn 
+          button.button_pa(data-btn="binotel-open")
+            svg.header__cta-icon
+              use(href="/assets/icons.svg#Calendar")
+            span ЗАПИСАТИСЯ НА КУРС
+          .info(id="open-pop-up-asm")
+            svg
+              use(href="/assets/icons.svg#Info")
+            span Переглянути програму курсу
+                          
+  section.tccc_template.card_wrapper
+    .tccc_template__wrapper 
+      .tccc_template__left 
+        h2 Курс "TCCC CLS"
+        span (Combat Lifesaver - рятувальник на полі бою)
+        img(src="/assets/images/tccc/tccc_2.jpg" alt="tccc")
+      .tccc_template__right
+        h3 Кому підходить?
+        ul 
+          li Цивільним особам, які хочуть навчитися надавати першу медичну допомогу в  екстриммальних ситуаціях
+          li Військовим, спецназівцям, співробітникам силових структур
+          li Охоронцям приватних військових компаній (ПВК)
+          li Медикам, які працюють у зонах бойових дій
+        h3 Цілі курсу:
+        ul 
+          li Глибоке вивчення тактичної медицини
+          li Розвиток навичок надання допомоги у складних умовах
+          li Практичне відпрацювання сценаріїв порятунку
+        .tccc_template__card 
+          .tccc_template__card_item 
+            h3 Тривалість курсу:
+            div 
+              svg
+                use(href="/assets/icons.svg#Clock2")
+              span 2 дні від 4 до 6 годин і кількості від  5 до 20 чоловік    
+          .tccc_template__card_item 
+            h3 Вартість курсу:
+            div 
+              svg
+                use(href="/assets/icons.svg#Price")
+              span 3000 грн/чол
+        .tccc_template__btn 
+          button.button_pa(data-btn="binotel-open")
+            svg.header__cta-icon
+              use(href="/assets/icons.svg#Calendar")
+            span ЗАПИСАТИСЯ НА КУРС
+          .info(id="open-pop-up-cls")
+            svg
+              use(href="/assets/icons.svg#Info")
+            span Переглянути програму курсу
   include /widgets/show_prices/show_prices.pug

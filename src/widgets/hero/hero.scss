@@ -16,11 +16,11 @@
   &__bg {
     position: relative;
     width: 100%;
-    height: calc(100vh - 120px);
+    height: calc(calc(var(--vh, 1vh) * 100) - 120px);
     border-radius: max(40px, 4.16vw);
     overflow: hidden;
     @media (max-width: 768px) {
-      height: calc(100vh - 100px);
+      height: calc(calc(var(--vh, 1vh) * 100) - 100px);
     }
     video {
       width: 100%;

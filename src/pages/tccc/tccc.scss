@@ -1,0 +1,209 @@
+.tccc_page.tccc {
+  position: relative;
+  z-index: 1;
+  width: calc(100vw - 40px);
+  margin: 0 auto;
+  margin-bottom: 20px;
+  @media (max-width: 480px) {
+    width: calc(100vw - 24px);
+  }
+  .tccc__title {
+    display: none;
+  }
+  .tccc__wrapper {
+    padding-top: 20px;
+  }
+  .tccc-card.tccc-card--right {
+    .button_pa {
+      display: none;
+    }
+  }
+  .tccc-media.card_video {
+    @media (max-width: 480px) {
+      height: 540px;
+    }
+  }
+}
+
+.tccc_template {
+  position: relative;
+  z-index: 1;
+  width: calc(100vw - 40px);
+  margin: 0 auto;
+  margin-bottom: 20px;
+  @media (max-width: 768px) {
+    padding: 40px 20px;
+  }
+  @media (max-width: 480px) {
+    width: calc(100vw - 24px);
+  }
+  &__wrapper {
+    display: flex;
+    gap: 60px;
+    @media (max-width: 1360px) {
+      flex-direction: column;
+    }
+    @media (max-width: 480px) {
+      gap: 20px;
+    }
+  }
+  &__left {
+    h2 {
+      @include text-92-72-48-600;
+      text-align: start;
+    }
+    span {
+      display: block;
+      @include text-24-500;
+      margin-bottom: 40px;
+      @media (max-width: 768px) {
+        margin-bottom: 60px;
+      }
+      @media (max-width: 480px) {
+        @include text-18-500;
+        margin-bottom: 20px;
+      }
+    }
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: max(40px, 4.16vw);
+      @media (max-width: 480px) {
+        border-radius: 20px;
+      }
+    }
+  }
+  &__right {
+    h3 {
+      margin-bottom: 4px;
+      font-family: "Noto Sans";
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 140%;
+      letter-spacing: -0.8px;
+      @media (max-width: 480px) {
+        @include text-14-700;
+      }
+    }
+    ul {
+      margin-bottom: 20px;
+    }
+    ul li {
+      position: relative;
+      margin-bottom: 4px;
+      padding-left: 10px;
+      @include text-16-500;
+      @media (max-width: 480px) {
+        @include text-14-500;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        width: 3px;
+        height: 3px;
+        border-radius: 50%;
+        background: $black;
+      }
+    }
+  }
+  &__card {
+    display: flex;
+    margin-bottom: 40px;
+    padding: 20px;
+    border-radius: 40px;
+    background: #fff;
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+  &__card_item {
+    width: 50%;
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+    h3 {
+      margin-bottom: 12px;
+      font-family: "Noto Sans";
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 140%;
+      letter-spacing: -0.8px;
+      @media (max-width: 480px) {
+        @include text-14-700;
+      }
+    }
+    div {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      svg {
+        width: 24px;
+        height: 24px;
+      }
+      span {
+        @include text-16-600;
+        @media (max-width: 480px) {
+          @include text-14-500;
+        }
+      }
+    }
+  }
+  &__btn {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    @media (max-width: 768px) {
+      flex-direction: column-reverse;
+      gap: 20px;
+    }
+    button {
+      flex: 1;
+      justify-content: center;
+      gap: 20px;
+      padding: 24px 32px;
+      @media (max-width: 768px) {
+        width: 100%;
+      }
+      @media (max-width: 480px) {
+        padding: 18px 24px;
+      }
+      svg {
+        width: 20.522px;
+        height: 19.992px;
+        @media (max-width: 480px) {
+          width: 15.392px;
+          height: 14.993px;
+        }
+      }
+      span {
+        @include text-24-500;
+        @media (max-width: 480px) {
+          @include text-18-500;
+        }
+      }
+    }
+    .info {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      height: min-content;
+      cursor: pointer;
+      svg {
+        width: 16px;
+        height: 16px;
+      }
+      span {
+        padding-top: 2px;
+        @include text-12-500;
+      }
+    }
+  }
+}

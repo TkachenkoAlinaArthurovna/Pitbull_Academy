@@ -5,6 +5,28 @@ document.addEventListener("DOMContentLoaded", () => {
   const root = document.querySelector(".prices_page");
   if (!root) return;
 
+  // // =========================
+  // // 1) ЛІВІ ТАБИ
+  // // =========================
+  // const tabsList = root.querySelector(".prices_page__left ul");
+  // const tabBtns = Array.from(root.querySelectorAll(".prices_page__left li[id]"));
+  // const contents = Array.from(root.querySelectorAll(".prices_page__right .prices_page__content[data-id]"));
+
+  // const setLeftActiveTab = (id) => {
+  //   tabBtns.forEach((li) => li.classList.toggle("active", li.id === id));
+  //   contents.forEach((block) => block.classList.toggle("active", block.dataset.id === id));
+  // };
+
+  // const startLeftId = tabBtns.find((li) => li.classList.contains("active"))?.id || tabBtns[0]?.id;
+
+  // if (startLeftId) setLeftActiveTab(startLeftId);
+
+  // tabsList?.addEventListener("click", (e) => {
+  //   const li = e.target.closest("li[id]");
+  //   if (!li) return;
+  //   setLeftActiveTab(li.id);
+  // });
+
   // =========================
   // 1) ЛІВІ ТАБИ
   // =========================
@@ -17,14 +39,28 @@ document.addEventListener("DOMContentLoaded", () => {
     contents.forEach((block) => block.classList.toggle("active", block.dataset.id === id));
   };
 
-  const startLeftId = tabBtns.find((li) => li.classList.contains("active"))?.id || tabBtns[0]?.id;
+  // ✅ 1) читаємо tab з URL
+  const params = new URLSearchParams(window.location.search);
+  const tabFromUrl = params.get("tab");
+
+  // старт: якщо в URL є валідний tab → він, інакше як було
+  const startLeftId =
+    (tabFromUrl && tabBtns.some((li) => li.id === tabFromUrl) && tabFromUrl) ||
+    tabBtns.find((li) => li.classList.contains("active"))?.id ||
+    tabBtns[0]?.id;
 
   if (startLeftId) setLeftActiveTab(startLeftId);
 
   tabsList?.addEventListener("click", (e) => {
     const li = e.target.closest("li[id]");
     if (!li) return;
+
     setLeftActiveTab(li.id);
+
+    // ✅ 2) (опційно) оновлюємо URL без перезавантаження
+    const url = new URL(window.location);
+    url.searchParams.set("tab", li.id);
+    window.history.replaceState({}, "", url);
   });
 
   // =========================
@@ -117,6 +153,8 @@ document.addEventListener("DOMContentLoaded", () => {
     cls.classList.remove("active-pop-up");
     document.body.classList.remove("no-scroll");
   });
+
+  //Dropdowns
 
   const dropdowns = document.querySelectorAll(".dropdown");
   dropdowns.forEach((dropdown) => {
