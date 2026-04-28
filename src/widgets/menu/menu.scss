@@ -5,7 +5,7 @@
   margin: 0 auto;
   margin-bottom: max(80px, 10.41vw);
   overflow: hidden;
-  @media (max-width: 768px) {
+  @media (max-width: 600px) {
     width: calc(100vw - 40px);
   }
   @media (max-width: 480px) {
@@ -28,6 +28,7 @@
     align-items: center;
     width: 100%;
     overflow: hidden;
+    background: #f7f7f7;
   }
   .menu__title {
     position: relative;
@@ -44,7 +45,7 @@
     @media (max-width: 1024px) {
       width: 65.1vw;
     }
-    @media (max-width: 768px) {
+    @media (max-width: 600px) {
       padding: 10px;
     }
     @media (max-width: 480px) {
@@ -72,7 +73,7 @@
       @include text-18-500;
     }
   }
-  @media (max-width: 768px) {
+  @media (max-width: 600px) {
     .menu-card:nth-child(1),
     .menu-card:nth-child(3),
     .menu-card:nth-child(5) {
@@ -83,6 +84,17 @@
     .menu-card:nth-child(4),
     .menu-card:nth-child(6) {
       --rotate: -2deg;
+    }
+  }
+  .menu-card__content {
+    @media (max-width: 600px) {
+      gap: 28px;
+    }
+  }
+  .menu-card__icon svg {
+    @media (max-width: 600px) {
+      width: 56px;
+      height: 56px;
     }
   }
 }

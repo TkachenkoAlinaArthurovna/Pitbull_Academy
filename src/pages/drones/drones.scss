@@ -1,7 +1,13 @@
 .drones_benefits {
   position: relative;
   z-index: 0;
-  height: calc(var(--vh, 1vh) * 100);
+  height: 44vw;
+  @media (max-width: 1024px) {
+    height: 100vw;
+  }
+  @media (max-width: 500px) {
+    height: 120vw;
+  }
   &__bg {
     width: 100%;
     height: auto;
@@ -14,9 +20,13 @@
     width: 100%;
     height: auto;
     display: none;
-    // transform: translateY(-25%);
+    transform: translateY(-25%);
     @media (max-width: 1024px) {
       display: block;
+      transform: translateY(-45vw);
+    }
+    @media (max-width: 500px) {
+      transform: translateY(-30vw);
     }
   }
   &__wrapper {
@@ -53,12 +63,12 @@
   }
   &__right {
     display: flex;
-    gap: 40px;
+    gap: max(8px, 2.08vw);
     width: 50%;
     @media (max-width: 1360px) {
       width: auto;
     }
-    @media (max-width: 768px) {
+    @media (max-width: 600px) {
       flex-direction: column;
       gap: 8px;
     }
@@ -68,8 +78,10 @@
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    @media (max-width: 768px) {
+    width: 33.333%;
+    @media (max-width: 600px) {
       flex-direction: row;
+      width: 100%;
     }
     svg {
       width: max(40px, 3.125vw);
@@ -78,7 +90,7 @@
     span {
       text-align: center;
       @include text-16-500;
-      @media (max-width: 768px) {
+      @media (max-width: 600px) {
         text-align: start;
       }
       @media (max-width: 480px) {
@@ -101,7 +113,7 @@
   }
   &__wrapper {
     display: flex;
-    gap: 60px;
+    gap: max(40px, 3.125vw);
     @media (max-width: 1360px) {
       flex-direction: column;
     }
@@ -110,6 +122,10 @@
     }
   }
   &__left {
+    width: 50%;
+    @media (max-width: 1360px) {
+      width: 100%;
+    }
     h2 {
       @include text-92-72-48-600;
       text-align: start;
@@ -129,6 +145,10 @@
     }
   }
   &__right {
+    width: 50%;
+    @media (max-width: 1360px) {
+      width: 100%;
+    }
     h3 {
       @include text-36-500;
       margin-bottom: 20px;
@@ -197,7 +217,7 @@
     align-items: center;
     gap: 20px;
     margin-top: 40px;
-    @media (max-width: 768px) {
+    @media (max-width: 600px) {
       flex-direction: column-reverse;
       gap: 20px;
     }
@@ -257,9 +277,7 @@
     width: calc(100vw - 24px);
   }
   &__title {
-    @media (max-width: 1360px) {
-      text-align: start;
-    }
+    text-align: start;
   }
   &__wrapper {
     display: flex;
@@ -272,6 +290,7 @@
       position: absolute;
       top: 50%;
       left: 50%;
+      right: auto;
       transform: translate(-50%, -50%);
       cursor: pointer;
       svg {
@@ -392,9 +411,10 @@
   margin-top: max(100px, 7.29vw);
   margin-bottom: max(100px, 7.29vw);
   @media (max-width: 480px) {
-    width: calc(100vw - 24px);
-    margin-top: 80px;
-    margin-bottom: 80px;
+    display: none;
+    // width: calc(100vw - 24px);
+    // margin-top: 80px;
+    // margin-bottom: 80px;
   }
   img {
     position: absolute;
@@ -441,6 +461,36 @@
     }
     .word_4 {
       right: 0;
+    }
+  }
+}
+.drones_theory_practice {
+  display: none;
+  @media (max-width: 480px) {
+    position: relative;
+    z-index: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    width: calc(100vw - 24px);
+    margin: 20px auto 40px auto;
+    padding: 0 20px;
+    h3 {
+      margin-bottom: 4px;
+      font-family: "Noto Sans";
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 130%;
+      letter-spacing: -0.54px;
+    }
+    p {
+      font-family: "Noto Sans";
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 140%;
+      letter-spacing: -0.56px;
     }
   }
 }

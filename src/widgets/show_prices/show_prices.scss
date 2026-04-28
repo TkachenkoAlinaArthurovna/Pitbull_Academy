@@ -49,9 +49,11 @@
       }
     }
     h2 {
+      width: max-content;
       margin-bottom: max(28px, 2.08vw);
       @include text-92-72-48-600;
       @media (max-width: 480px) {
+        width: auto;
         margin-bottom: 20px;
       }
     }

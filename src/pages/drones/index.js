@@ -45,6 +45,17 @@ document.addEventListener("DOMContentLoaded", () => {
       prevEl: prevBtn,
       nextEl: nextBtn,
     },
+    breakpoints: {
+      0: {
+        spaceBetween: 10,
+      },
+      480: {
+        spaceBetween: 20,
+      },
+      1024: {
+        spaceBetween: 40,
+      },
+    },
   });
 
   if (document.querySelector(".drones_page_hero__scroll")) {

@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const swiperRelaxGallery = new Swiper(swiper, {
     modules: [Navigation],
     slidesPerView: "auto",
-    spaceBetween: 40,
+    spaceBetween: 12,
     loop: false,
     navigation: {
       prevEl: prevBtn,

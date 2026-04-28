@@ -13,7 +13,17 @@
     }
     @media (max-width: 768px) {
       position: relative;
+      left: 0;
+      bottom: 0;
+      width: 100%;
       transform: translateY(-50%);
+      img {
+        position: relative;
+        left: -20px;
+        min-width: 593.382px !important;
+        min-height: 218.238px !important;
+        object-fit: contain !important;
+      }
     }
     img {
       width: 100%;

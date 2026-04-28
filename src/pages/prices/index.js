@@ -1,5 +1,22 @@
 import "./prices.scss";
 import "@widgets/title/title.js";
+import axios from "axios";
+
+export async function getData() {
+  const formData = new FormData();
+  formData.append("action", "prices");
+
+  try {
+    const { data } = await axios.post("/wp-admin/admin-ajax.php", formData);
+    console.log(data);
+    return data.data;
+  } catch (error) {
+    console.error("Помилка при завантаженні:", error);
+    return null;
+  }
+}
+
+getData();
 
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.querySelector(".prices_page");

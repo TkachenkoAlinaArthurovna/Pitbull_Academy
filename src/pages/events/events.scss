@@ -6,7 +6,8 @@
   align-items: center;
   width: calc(100vw - 8.333vw);
   margin: 0 auto;
-  padding: 40px 0 28px 0;
+  padding: 0;
+  padding-bottom: 28px;
   @media (max-width: 1024px) {
     flex-direction: column-reverse;
     align-items: start;
@@ -55,7 +56,7 @@
   z-index: 1;
   width: calc(100vw - 8.333vw);
   margin: 0 auto;
-  margin-bottom: 260px;
+  margin-bottom: 100px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: max(20px, 2.08vw);
@@ -72,6 +73,6 @@
     grid-template-columns: repeat(1, 1fr);
     gap: 12px;
     width: calc(100vw - 24px);
-    margin-bottom: 208px;
+    margin-bottom: 80px;
   }
 }

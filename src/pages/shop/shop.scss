@@ -6,7 +6,8 @@
   align-items: center;
   width: calc(100vw - 8.333vw);
   margin: 0 auto;
-  padding: 40px 0 28px 0;
+  padding: 0;
+  padding-bottom: 28px;
   @media (max-width: 1024px) {
     flex-direction: column-reverse;
     align-items: start;

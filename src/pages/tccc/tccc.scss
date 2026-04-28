@@ -48,6 +48,10 @@
     }
   }
   &__left {
+    width: 50%;
+    @media (max-width: 1360px) {
+      width: 100%;
+    }
     h2 {
       @include text-92-72-48-600;
       text-align: start;
@@ -75,6 +79,10 @@
     }
   }
   &__right {
+    width: 50%;
+    @media (max-width: 1360px) {
+      width: 100%;
+    }
     h3 {
       margin-bottom: 4px;
       font-family: "Noto Sans";
@@ -113,13 +121,13 @@
   }
   &__card {
     display: flex;
+    gap: 20px;
     margin-bottom: 40px;
     padding: 20px;
     border-radius: 40px;
     background: #fff;
-    @media (max-width: 768px) {
+    @media (max-width: 600px) {
       flex-direction: column;
-      gap: 20px;
     }
   }
   &__card_item {
@@ -141,7 +149,7 @@
     }
     div {
       display: flex;
-      align-items: center;
+      align-items: start;
       gap: 8px;
 
       svg {
@@ -204,6 +212,14 @@
         padding-top: 2px;
         @include text-12-500;
       }
+    }
+  }
+}
+
+.tccc-page {
+  @media (max-width: 480px) {
+    .logo-dog {
+      display: none;
     }
   }
 }

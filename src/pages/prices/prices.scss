@@ -8,7 +8,7 @@
     margin: 0 auto;
     margin-top: 60px;
     margin-bottom: max(100px, 10.41vw);
-    @media (max-width: 768px) {
+    @media (max-width: 767px) {
       flex-direction: column;
       width: calc(100vw - 40px);
       margin-top: 40px;
@@ -32,7 +32,7 @@
       min-width: 260px;
       width: 260px;
     }
-    @media (max-width: 768px) {
+    @media (max-width: 767px) {
       width: 100%;
       padding: 14px 20px;
       border-radius: 20px;
@@ -45,14 +45,14 @@
       font-weight: 700;
       line-height: 140%;
       letter-spacing: -0.8px;
-      @media (max-width: 768px) {
+      @media (max-width: 767px) {
         display: none;
       }
     }
     li.active {
       background: $beige;
       color: $white;
-      @media (max-width: 768px) {
+      @media (max-width: 767px) {
         background: transparent;
         color: $beige;
       }
@@ -69,7 +69,7 @@
       border-radius: 100px;
       cursor: pointer;
       @include text-16-500;
-      @media (max-width: 768px) {
+      @media (max-width: 767px) {
         padding: 8px 0;
         @include text-14-700;
       }
@@ -80,7 +80,7 @@
         @include center;
         width: 16px;
         height: 16px;
-        @media (max-width: 768px) {
+        @media (max-width: 767px) {
           display: none;
         }
         svg {
@@ -94,6 +94,7 @@
   &__right {
     position: relative;
     flex: 1;
+    overflow: hidden;
   }
   &__content {
     display: flex;
@@ -141,14 +142,12 @@
     overflow: visible;
   }
   &__content_title {
+    margin-bottom: 20px;
     margin-right: 40px;
     @include text-48-500;
     @media (max-width: 1360px) {
       width: 100%;
       margin-bottom: 30px;
-    }
-    @media (max-width: 1360px) {
-      margin-bottom: 20px;
     }
   }
   &__content_btn.active {
@@ -241,10 +240,6 @@
   &__left_info {
     display: flex;
     gap: 20px;
-    @media (max-width: 1360px) {
-      flex-direction: column;
-      gap: 12px;
-    }
     div {
       display: flex;
       align-items: center;
@@ -271,6 +266,13 @@
   }
   &__center {
     flex: 1;
+    p {
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 140%; /* 16.8px */
+      letter-spacing: -0.48px;
+    }
     h3 {
       margin-bottom: 8px;
       @include text-16-600;
@@ -351,6 +353,8 @@
   &__prices_wrapper {
     display: flex;
     svg {
+      position: relative;
+      transform: translateY(-25%);
       width: 24px;
       height: 24px;
       margin-right: 8px;
@@ -359,6 +363,7 @@
       display: flex;
       flex-direction: column;
       margin-right: 20px;
+      white-space: nowrap;
     }
   }
   &__info {
@@ -400,8 +405,9 @@
   }
 
   .package__center {
-    max-width: 340px;
-    width: 340px;
+    min-width: 15vw;
+    width: 15vw;
+    max-width: 15vw;
     margin: 0 40px;
     @media (max-width: 1360px) {
       max-width: 100%;
@@ -467,7 +473,7 @@
     display: none;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .dropdown_items {
     position: relative;
     width: 100%;

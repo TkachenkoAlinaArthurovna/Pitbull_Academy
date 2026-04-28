@@ -2,6 +2,11 @@
   position: relative;
   z-index: 2;
   margin-bottom: max(120px, 10.41vw);
+  .navigation {
+    @media (max-width: 480px) {
+      top: 110px;
+    }
+  }
 
   &__wrapper {
     position: relative;
@@ -39,11 +44,13 @@
   &__right_wrapper {
     display: flex;
     justify-content: space-between;
+    gap: 20px;
   }
   // тільки коли Swiper активний
   &.event--slider {
     .event__right_wrapper {
       justify-content: flex-start;
+      gap: 0;
     }
     .event_card {
       width: 340px;

@@ -9,12 +9,15 @@
   }
   @media (max-width: 480px) {
     width: calc(100vw - 24px);
-    margin-bottom: 40px;
+    margin-bottom: 80px;
   }
   &__wrapper {
     display: flex;
     gap: max(20px, 4.16vw);
     @media (max-width: 1024px) {
+      flex-direction: column;
+    }
+    @media (max-width: 480px) {
       flex-direction: column-reverse;
     }
   }

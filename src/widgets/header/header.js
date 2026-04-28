@@ -115,59 +115,106 @@ document.addEventListener("DOMContentLoaded", () => {
   //     });
   //   });
   // });
-  document.querySelectorAll(".menu-card").forEach((card) => {
-    const icon = card.querySelector(".menu-card__icon");
-    const svg = card.querySelector(".menu-card__icon svg");
-    const use = card.querySelector(".menu-card__icon use");
-    const rotate = (
-      card.dataset.rotate ||
-      getComputedStyle(card).getPropertyValue("--rotate") ||
-      "0deg"
-    ).trim();
+  if (window.innerWidth > 1024) {
+    document.querySelectorAll(".menu-card").forEach((card) => {
+      const icon = card.querySelector(".menu-card__icon");
+      const svg = card.querySelector(".menu-card__icon svg");
+      const use = card.querySelector(".menu-card__icon use");
+      const rotate = (
+        card.dataset.rotate ||
+        getComputedStyle(card).getPropertyValue("--rotate") ||
+        "0deg"
+      ).trim();
 
-    // корисно для SVG/іконок
-    gsap.set(icon, { transformOrigin: "50% 50%" });
+      // корисно для SVG/іконок
+      gsap.set(icon, { transformOrigin: "50% 50%" });
 
-    card.addEventListener("mouseenter", () => {
-      gsap.killTweensOf([card, icon, svg, use]); // ✅ вбили і картку, і іконку
+      card.addEventListener("mouseenter", () => {
+        gsap.killTweensOf([card, icon, svg, use]); // ✅ вбили і картку, і іконку
 
-      gsap.to(card, {
-        y: -20,
-        rotate,
-        duration: 0.8,
-        ease: "elastic.out(1, 0.35)",
-        overwrite: "auto",
+        gsap.to(card, {
+          y: -20,
+          rotate,
+          duration: 0.8,
+          ease: "elastic.out(1, 0.35)",
+          overwrite: "auto",
+        });
+
+        gsap.to(icon, {
+          scale: 1.1,
+          duration: 0.2,
+          ease: "power3.out",
+          overwrite: "auto",
+        });
+
+        gsap.to(svg, { color: "#000", duration: 0.2, ease: "power3.out", overwrite: "auto" });
       });
 
-      gsap.to(icon, {
-        scale: 1.1,
-        duration: 0.2,
-        ease: "power3.out",
-        overwrite: "auto",
-      });
+      card.addEventListener("mouseleave", () => {
+        gsap.killTweensOf([card, icon, svg, use]);
 
-      gsap.to(svg, { color: "#000", duration: 0.2, ease: "power3.out", overwrite: "auto" });
+        gsap.to(card, {
+          y: 0,
+          rotate,
+          duration: 0.6,
+          ease: "elastic.out(1, 0.35)",
+          overwrite: "auto",
+        });
+
+        gsap.to(icon, {
+          scale: 1,
+          duration: 0.15,
+          ease: "power3.out",
+          overwrite: "auto",
+        });
+
+        gsap.to(svg, { color: "#A89968", duration: 0.2, ease: "power3.out", overwrite: "auto" });
+      });
     });
+  }
+  const openBtn = document.querySelector(".hero__sound.hero__sound_first");
+  const popup = document.querySelector(".js-video-popup");
+  const overlay = document.querySelector(".js-video-popup-close");
+  const closeBtn = document.querySelector(".js-video-popup-close-btn");
+  const video = document.querySelector(".js-hero-popup-video");
 
-    card.addEventListener("mouseleave", () => {
-      gsap.killTweensOf([card, icon, svg, use]);
+  if (!openBtn || !popup || !video) return;
 
-      gsap.to(card, {
-        y: 0,
-        rotate,
-        duration: 0.6,
-        ease: "elastic.out(1, 0.35)",
-        overwrite: "auto",
+  const openPopup = () => {
+    popup.classList.add("is-open");
+    document.body.style.overflow = "hidden";
+
+    video.muted = false;
+    video.currentTime = 0;
+
+    const playPromise = video.play();
+    if (playPromise !== undefined) {
+      playPromise.catch((error) => {
+        console.log("Автовідтворення зі звуком заблоковане браузером:", error);
       });
+    }
+  };
 
-      gsap.to(icon, {
-        scale: 1,
-        duration: 0.15,
-        ease: "power3.out",
-        overwrite: "auto",
-      });
+  const closePopup = () => {
+    popup.classList.remove("is-open");
+    document.body.style.overflow = "";
+    video.pause();
+    video.currentTime = 0;
+  };
 
-      gsap.to(svg, { color: "#A89968", duration: 0.2, ease: "power3.out", overwrite: "auto" });
-    });
+  openBtn.addEventListener("click", openPopup);
+
+  if (overlay) {
+    overlay.addEventListener("click", closePopup);
+  }
+
+  if (closeBtn) {
+    closeBtn.addEventListener("click", closePopup);
+  }
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && popup.classList.contains("is-open")) {
+      closePopup();
+    }
   });
 });

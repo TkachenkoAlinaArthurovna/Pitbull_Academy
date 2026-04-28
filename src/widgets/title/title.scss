@@ -45,6 +45,11 @@
 .title_for_page--shop {
   .title_for_page__sound {
     display: block;
+    position: relative;
+    top: auto;
+    right: auto;
+    background: rgba(1, 11, 19, 0.2);
+    border-radius: 50%;
   }
   .logo-dog {
     @media (max-width: 480px) {

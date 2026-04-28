@@ -40,6 +40,7 @@
     left: max(20px, 3.125vw);
     @include text-92-72-48-600;
     color: $white;
+    text-align: start;
   }
   &__container {
     position: absolute;

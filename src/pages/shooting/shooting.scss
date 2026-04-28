@@ -54,6 +54,9 @@
     }
     @media (max-width: 480px) {
       width: calc(100vw - 24px);
+      .logo-dog {
+        display: none;
+      }
     }
   }
   &__wrapper {

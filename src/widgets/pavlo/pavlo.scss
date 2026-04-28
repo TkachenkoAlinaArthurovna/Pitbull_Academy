@@ -75,6 +75,7 @@
       margin-bottom: max(40px, 3.125vw);
       @media (max-width: 480px) {
         @include text-24-500;
+        line-height: 120%;
         margin-bottom: 20px;
       }
     }

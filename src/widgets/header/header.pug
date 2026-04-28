@@ -85,7 +85,9 @@ header.header
 
         // Phone select
         .header__phone
+          
           button.header__phone-toggle(type="button")
+            
             svg.header__icon-phone
               use(href="/assets/icons.svg#Phone")
             .header__phone-number
@@ -94,6 +96,7 @@ header.header
             .header__arrow
               svg.header__icon-arrow-select
                 use(href="/assets/icons.svg#Arrow_select")
+          .stub
         a.header__phone-mob(href="tel:+380738687077")
           <svg class="header__icon-phone" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M4.33151 0.431557C3.07881 -1.41484 -0.118412 3.1217 0.00338745 5.39835C0.184582 8.69127 2.18925 12.2484 4.97018 15.0292C7.75111 17.8101 11.3081 19.8148 14.601 19.996C16.8739 20.1219 21.4152 16.9234 19.5678 15.6669C19.5659 15.6656 19.5558 15.6587 19.5522 15.6552L15.3374 13.04C15.2814 13.0041 14.8057 12.7569 14.7387 12.745C13.6595 12.5402 12.6236 13.6114 11.4341 14.4228C11.2844 14.5252 11.0359 14.612 10.8784 14.5214C9.61399 13.7967 8.8378 13.1429 7.84518 12.1503C6.85256 11.1577 6.19886 10.3854 5.47409 9.1171C5.38349 8.95955 5.47425 8.71112 5.57272 8.56144C6.38415 7.368 7.45528 6.33598 7.25046 5.25675C7.23821 5.19303 6.98715 4.71346 6.95554 4.65812L4.34421 0.447182C4.34392 0.446753 4.33538 0.435422 4.33151 0.431557Z" fill="#F7F7F7"/>
@@ -156,7 +159,7 @@ header.header
                   use(href="/assets/icons.svg#Individual")
               .menu-card__text ІНДИВІДУАЛЬНІ ЗАНЯТТЯ
 
-          a.menu-card(href="/shop")
+          a.menu-card(href="/shop.html")
             .menu-card__bg 
               img(class="bg_1" src="/assets/images/cards/card.png")
               img(class="bg_2" src="/assets/images/cards/card_2.png")
@@ -166,7 +169,7 @@ header.header
                   use(href="/assets/icons.svg#Weapon")
               .menu-card__text МАГАЗИН ЗБРОЇ
 
-          a.menu-card(href="/events")
+          a.menu-card(href="/events.html")
             .menu-card__bg 
               img(class="bg_1" src="/assets/images/cards/card.png")
               img(class="bg_2" src="/assets/images/cards/card_2.png")
@@ -176,7 +179,7 @@ header.header
                   use(href="/assets/icons.svg#Competitions")
               .menu-card__text ЗМАГАННЯ ТА ПОДІЇ
 
-          a.menu-card(href="/prices")
+          a.menu-card(href="/prices.html")
             .menu-card__bg 
               img(class="bg_1" src="/assets/images/cards/card.png")
               img(class="bg_2" src="/assets/images/cards/card_2.png")
@@ -196,31 +199,31 @@ header.header
               span Головна
 
           li
-            a(href="/about")
+            a(href="/about.html")
               svg.menu__logo_item
                 use(href="/assets/icons.svg#Menu_about")
               span Про нас
 
           li
-            a(href="/shooting")
+            a(href="/shooting.html")
               svg.menu__logo_item
                 use(href="/assets/icons.svg#Menu_bullet")
               span Стрільбище
 
           li
-            a(href="/drones")
+            a(href="/drones.html")
               svg.menu__logo_item
                 use(href="/assets/icons.svg#Menu_drone")
               span Школа дронів
 
           li
-            a(href="/tccc")
+            a(href="/tccc.html")
               svg.menu__logo_item
                 use(href="/assets/icons.svg#Menu_medicine")
               span Тактична медицина
 
           li
-            a(href="/shop")
+            a(href="/shop.html")
               svg.menu__logo_item
                 use(href="/assets/icons.svg#Menu_weapon_store")
               span Магазин зброї
@@ -232,7 +235,7 @@ header.header
           //-     span Kill House
 
           li
-            a(href="/relax")
+            a(href="/relax.html")
               svg.menu__logo_item
                 use(href="/assets/icons.svg#Menu_relax_zone")
               span Зона відпочинку
@@ -405,3 +408,45 @@ header.header
             li Моніторинг стану пораненого
             li Підготовка до евакуації, комунікація та документування
             li Евакуаційні заходи
+  .hero__video-popup.js-video-popup
+    .hero__video-popup-overlay.js-video-popup-close
+      
+    .hero__video-popup-content
+      button.hero__video-popup-close.js-video-popup-close-btn(type="button" aria-label="Закрити відео")
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+          <path d="M7.83301 9.16699L14.1963 15.5303L7.83301 21.8936L9.10645 23.167L15.4697 16.8037L21.833 23.167L23.1064 21.8936L16.7432 15.5303L23.1064 9.16699L21.833 7.89355L15.4697 14.2568L9.10645 7.89355L7.83301 9.16699Z" fill="#F7F7F7"/>
+        </svg> 
+      video.hero__video.js-hero-popup-video(controls playsinline preload="metadata")
+        source(src="/public_static/videos/hero_m.mp4" media="(max-width: 768px)")
+        source(src="/public_static/videos/hero_web.mp4")
+  .form(product-form)
+    .form__wrapper 
+      .form__content.card_wrapper
+        .close(data-close-form)
+          svg
+            use(href="/assets/icons.svg#Cross")
+        h2 Ми зв’яжемось з вами найближчим часом для уточнення деталей.
+        form(action="" method="" data-form="contact-form") 
+          .form_item(data-field-input data-field-name)
+            input.text(type="text" name="name" id="name" placeholder="Введіть ім'я"  novalidate)
+            .input-message(data-input-message) Херня
+          .form_item(data-field-input data-field-phone)
+            input.text(type="tel" name="phone" id="phone" placeholder="+38 (___) ___-__-__"  novalidate)
+            .input-message(data-input-message)
+          .form_item(data-field-input data-field-email)
+            input.text(type="text" name="email" id="email" placeholder="Введіть email"  novalidate)
+            .input-message(data-input-message)
+          .form_item(data-field-input data-field-product)
+            input.text(type="hidden" name="product" id="product"  novalidate)
+          button(class="form_button btn_black_without_icon" type="submit" data-btn-submit) Замовити
+  .form-success
+    .form-success__wrapper 
+      .form-success__content.card_wrapper
+        .close(data-close-form-success)
+          svg
+            use(href="/assets/icons.svg#Cross")
+        h2 Дякуємо за замовлення!
+        p Адміністратор звʼяжеться з Вами для узгодження деталей найближчим часом. 
+        svg.logo
+          use(href="/assets/icons.svg#Logo")
+        button(class="btn_black_without_icon" data-close-form-success) Закрити

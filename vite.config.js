@@ -31,20 +31,14 @@ function getPageEntryAbs(pugPathAbs) {
 
 function toViteSrcUrl(absPath) {
   const rel = relative(ROOT, absPath).replace(/\\/g, "/");
-  return `/${rel}`; // -> /src/pages/home/index.js
+  return `/${rel}`; // -> /src/pages/home/index.ts
 }
 
-function injectScripts(html, { mainSrc, pageSrc }) {
-  const tags = [
-    mainSrc ? `<script type="module" src="${mainSrc}"></script>` : "",
-    pageSrc ? `<script type="module" src="${pageSrc}"></script>` : "",
-  ].filter(Boolean);
-
-  if (!tags.length) return html;
-
-  const block = `\n${tags.join("\n")}\n`;
-  if (html.includes("</body>")) return html.replace("</body>", `${block}</body>`);
-  return html + block;
+function injectPageScript(html, pageSrc) {
+  if (!pageSrc) return html;
+  const tag = `\n<script type="module" src="${pageSrc}"></script>\n`;
+  if (html.includes("</body>")) return html.replace("</body>", `${tag}</body>`);
+  return html + tag;
 }
 
 // =====================
@@ -64,13 +58,15 @@ function buildEntryPoints() {
 
     if (file.startsWith("_")) continue;
 
-    // якщо хочеш НЕ дублювати home як home/index.html, розкоментуй:
+    // home/home.pug already -> index.html
     // if (folder === "home" && file === "home") continue;
 
+    // about/about.pug -> about.html
+    // single-news/single-news.pug -> single-news.html
     if (folder === file) {
-      entries[`${file}/index.html`] = abs;
+      entries[`${file}.html`] = abs;
     } else {
-      entries[`${folder}/${file}.html`] = abs;
+      entries[`${folder}-${file}.html`] = abs;
     }
   }
 
@@ -87,53 +83,19 @@ const virtualModuleMap = htmlInputs.reduce((acc, htmlKey) => {
 }, {});
 
 // =====================
-// JS entry points (AUTO)
-// =====================
-function buildJsEntries() {
-  const entries = {};
-
-  // main.(js|ts)
-  const mainAbs = getMainEntryAbs();
-  if (mainAbs) entries["main"] = mainAbs;
-
-  // pages/**/index.(js|ts)
-  const pageIndexFiles = glob.sync("src/pages/**/index.{js,ts}", { nodir: true });
-
-  for (const filePath of pageIndexFiles) {
-    const abs = resolve(ROOT, filePath);
-
-    // name by folder path:
-    // src/pages/home/index.js -> "home"
-    // src/pages/blog/post/index.js -> "blog-post"
-    const relDir = relative(PAGES_ROOT, dirname(abs)).replace(/\\/g, "/");
-    const name = (relDir || "page").replace(/\//g, "-");
-
-    entries[name] = abs;
-  }
-
-  return entries;
-}
-
-const jsEntries = buildJsEntries();
-
-// =====================
-// Rollup input: HTML (auto from entryPoints) + JS (auto from pages)
+// Rollup input: ONLY HTML
 // =====================
 function buildRollupInput() {
   const input = {};
 
-  // HTML: робимо стабільні ключі, а значення = "index.html" / "about/index.html" ...
   for (const htmlKey of htmlInputs) {
-    // "about/index.html" -> "html_about_index"
     const safe = htmlKey
       .replace(/\.html$/i, "")
       .replace(/[\\/]/g, "_")
       .replace(/[^a-z0-9_]/gi, "_");
-    input[`html_${safe}`] = htmlKey; // важливо: значення рядок "about/index.html"
-  }
 
-  // JS entries
-  Object.assign(input, jsEntries);
+    input[`html_${safe}`] = htmlKey; // value MUST be string path to html
+  }
 
   return input;
 }
@@ -184,14 +146,10 @@ export default defineConfig({
           pretty: true,
         });
 
-        // inject main + page entry (dev: /src/... ; build: Vite replace)
-        const mainAbs = getMainEntryAbs();
+        // inject ONLY ONE script: page entry (page imports @app/main inside itself)
         const pageAbs = getPageEntryAbs(pugPath);
 
-        html = injectScripts(html, {
-          mainSrc: mainAbs ? toViteSrcUrl(mainAbs) : null,
-          pageSrc: pageAbs ? toViteSrcUrl(pageAbs) : null,
-        });
+        html = injectPageScript(html, pageAbs ? toViteSrcUrl(pageAbs) : null);
 
         return html;
       },
@@ -218,13 +176,8 @@ export default defineConfig({
                 pretty: true,
               });
 
-              const mainAbs = getMainEntryAbs();
               const pageAbs = getPageEntryAbs(filePath);
-
-              html = injectScripts(html, {
-                mainSrc: mainAbs ? toViteSrcUrl(mainAbs) : null,
-                pageSrc: pageAbs ? toViteSrcUrl(pageAbs) : null,
-              });
+              html = injectPageScript(html, pageAbs ? toViteSrcUrl(pageAbs) : null);
 
               const processed = await server.transformIndexHtml(req.url, html);
               res.setHeader("Content-Type", "text/html; charset=utf-8");
@@ -251,13 +204,8 @@ export default defineConfig({
                   pretty: true,
                 });
 
-                const mainAbs = getMainEntryAbs();
                 const pageAbs = getPageEntryAbs(filePath);
-
-                html = injectScripts(html, {
-                  mainSrc: mainAbs ? toViteSrcUrl(mainAbs) : null,
-                  pageSrc: pageAbs ? toViteSrcUrl(pageAbs) : null,
-                });
+                html = injectPageScript(html, pageAbs ? toViteSrcUrl(pageAbs) : null);
 
                 const processed = await server.transformIndexHtml(req.url, html);
                 res.setHeader("Content-Type", "text/html; charset=utf-8");
@@ -282,16 +230,18 @@ export default defineConfig({
     outDir: "dist",
     emptyOutDir: true,
 
+    // ✅ 1 CSS file (Vite won't split css into multiple chunk css files)
+    cssCodeSplit: false,
+
+    // ✅ remove <link rel="modulepreload">
+    modulePreload: false,
+
     rollupOptions: {
       input: buildRollupInput(),
 
       output: {
-        entryFileNames: (chunkInfo) => {
-          if (chunkInfo.name === "main") return "assets/scripts/main.bundle.js";
-          if (chunkInfo.name.startsWith("html_")) return "assets/scripts/html/[name].js";
-          return `assets/scripts/${chunkInfo.name}.bundle.js`;
-        },
-
+        // we don't need "html_*" bundles anymore; pages are the real entries
+        entryFileNames: "assets/scripts/[name].bundle.js",
         chunkFileNames: "assets/scripts/chunks/[name]-[hash].js",
 
         assetFileNames: (assetInfo) => {

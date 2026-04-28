@@ -46,7 +46,7 @@
     cursor: pointer;
     .watch-svg__circle {
       fill: rgba(1, 11, 19, 0.2);
-      backdrop-filter: blur(220px);
+      // backdrop-filter: blur(220px);
     }
 
     @media (max-width: 768px) {
